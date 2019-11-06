@@ -14,7 +14,7 @@ const VenueSchema = new mongoose.Schema({
 const VenueCollection = mongoose.model('Venue', VenueSchema)
 
 
-// CRUD FUNCTIONS
+// CRUD FUNCTIONS FOR VENUE
 
 const getAllVenues = () => {
   return VenueCollection.find()
@@ -36,7 +36,7 @@ const deleteVenue = (venueId) => {
   return VenueCollection.deleteOne({ _id: venueId })
 }
 
-// EXPORT CRUD FUNCTIONS
+// EXPORT VENUE CRUD FUNCTIONS
 module.exports = {
   getAllVenues,
   getOneVenue,
