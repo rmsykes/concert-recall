@@ -1,22 +1,11 @@
-/* 
- * This is the template for a server.js file.  Follow the steps below and read
- * the comments for creating your own (or you can just copy this file).
- */
-
-/* Step 1
- *
- * Import needed packages
- *
- */
+// IMPORT PACKAGES
 const express = require('express')
 const app = express()
 
-/* Step 2
- * 
- * import routers from controllers/
- *
- */
+
+// IMPORT ROUTERS
 const { bandRouter } = require('./controllers/band.js')
+const { venueRouter } = require('./controllers/venue.js')
 
 
 /* Step 3
@@ -50,6 +39,7 @@ app.use(express.static(`${__dirname}/client/build`))
  * the paths defined in the router.
  */
 app.use('/api/band', bandRouter)
+app.use('/api/venue', venueRouter)
 
 /* Step 5
  *

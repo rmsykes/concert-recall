@@ -2,15 +2,15 @@
 const mongoose = require('./connection.js')
 
 
-// BAND SCHEMA
+// CREATE BAND SCHEMA
 const BandSchema = new mongoose.Schema({
- name: String,
- genre: String
+  bandName: String,
+  genre: String
 })
 
 
 
-// BAND API
+// CREATE BAND API
 const BandCollection = mongoose.model('Band', BandSchema)
 
 
@@ -31,11 +31,11 @@ const createBand = (bandData) => {
 }
 
 const updateBand = (bandId, bandData) => {
-  return BandCollection.updateOne({_id: bandId}, bandData)
-} 
+  return BandCollection.updateOne({ _id: bandId }, bandData)
+}
 
 const deleteBand = (bandId) => {
-  return BandCollection.deleteOne({_id: bandId})
+  return BandCollection.deleteOne({ _id: bandId })
 }
 
 
