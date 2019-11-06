@@ -6,6 +6,7 @@ const app = express()
 // IMPORT ROUTERS
 const { bandRouter } = require('./controllers/band.js')
 const { venueRouter } = require('./controllers/venue.js')
+const { concertRouter } = require('./controllers/concert.js')
 
 
 /* Step 3
@@ -40,6 +41,8 @@ app.use(express.static(`${__dirname}/client/build`))
  */
 app.use('/api/band', bandRouter)
 app.use('/api/venue', venueRouter)
+app.use('/api/concert', concertRouter)
+
 
 /* Step 5
  *

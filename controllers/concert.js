@@ -1,50 +1,56 @@
-/* Step 1 import express
- *
- */
+// IMPORT EXPRESS
 const express = require('express')
 
-/* Step 2
- *
- * Import the api files from the models
- *
- * TODO: change the file path to the models file you'll need to use.
- * TODO: rename this from `templateApi` to something more sensible (e.g:
- * `shopsAPI`)
- *
- * NOTE: You may need to import more than one API to create the 
- * controller you need.
- * 
- */
-const templateApi = require('../models/template.js')
+// IMPORT CONCERT API
+const concertApi = require('../models/concert.js')
 
-/* Step 3 
- * 
- * Create a new router.
- *
- * the router will "contain" all the request handlers that you define in this file.
- * TODO: rename this from templateRouter to something that makes sense. (e.g:
- * `shopRouter`)
- */
-const templateRouter = express.Router()
+// CREATE CONCERT ROUTER
+const concertRouter = express.Router()
 
-/* Step 4
- * 
- * TODO: Put all request handlers here
- */
 
-/* Step 5
- *
- * TODO: delete this handler; it's just a sample
- */ 
-templateRouter.get('/', (req, res) => {
-  res.json(templateApi.getHelloWorldString())
+// CONCERT REQUEST HANDLERS
+
+// getAllConcerts()
+concertRouter.get('/', (req, res) => {
+  concertApi.getAllConcerts()
+  .then((concerts) => {
+    res.json(concerts)
+  })
 })
 
-/* Step 6
- *
- * Export the router from the file.
- *
- */
+// getOneConcert()
+concertRouter.get('/:concertId', (req, res) => {
+  concertApi.getOneConcert(req.params.concertId)
+  .then((oneConcert) => {
+    res.json(oneConcert)
+  })
+})
+
+// createConcert()
+concertRouter.post('/', (req, res) => {
+  concertApi.createConcert(req.body)
+  .then((newConcert) => {
+    res.json(newConcert)
+  })
+})
+
+// updateConcert
+concertRouter.put('/:concertId', (req, res) => {
+  concertApi.updateConcert(req.params.concertId, req.body)
+  .then((updatedConcert) => {
+    res.json(updatedConcert)
+  })
+})
+
+// deleteConcert
+concertRouter.delete('/:concertId', (req, res) => {
+  concertApi.deleteConcert(req.params.concertId)
+  .then((deletedConcert) => {
+    res.json(deletedConcert)
+  })
+})
+
+//  EXPORT CONCERT ROUTER
 module.exports = {
-  templateRouter
+  concertRouter
 }
