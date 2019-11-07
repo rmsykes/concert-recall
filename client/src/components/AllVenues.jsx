@@ -1,8 +1,8 @@
 // Import React, { Component } and axios
-
 import React, { Component } from 'react'
 import axios from 'axios'
 import { Link } from 'react-router-dom'
+
 
 // Create and Export AllVenues Component
 export default class AllVenues extends Component {
@@ -16,7 +16,7 @@ export default class AllVenues extends Component {
 
     }
 
-    // componentDidMount() to retreive /api/venue data
+    // componentDidMount() - retreives /api/venue data
     componentDidMount() {
         axios.get('/api/venue')
             .then((res) => {

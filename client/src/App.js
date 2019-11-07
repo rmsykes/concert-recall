@@ -4,6 +4,7 @@ import AllBands from './components/AllBands'
 import OneBand from './components/OneBand'
 import AllVenues from './components/AllVenues'
 import OneVenue from './components/OneVenue'
+import AllConcerts from './components/AllConcerts'
 import './App.css';
 
 function App() {
@@ -14,8 +15,8 @@ function App() {
           <Route exact path="/band" component={AllBands}/>
           <Route path="/band/:bandId" component={OneBand}/>
           <Route exact path="/venue" component={AllVenues}/>
-          <Route exact path="/venue/:venueId" component={OneVenue}/>
-
+          <Route path="/venue/:venueId" component={OneVenue}/>
+          <Route exact path="/concert" component={AllConcerts}/>
         </Switch>
       </Router>
     </div>
