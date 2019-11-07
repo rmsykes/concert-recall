@@ -1,7 +1,7 @@
 // Import React, { Component }, Axios, Link
 import React, { Component } from 'react'
 import axios from 'axios'
-import {Link} from 'react-router-dom'
+import {Link, Redirect} from 'react-router-dom'
 
 // Create and Export OneConcert Component
 export default class OneConcert extends Component {
@@ -14,7 +14,8 @@ export default class OneConcert extends Component {
             description: '',
             bandId: ''
         },
-        band: {}
+        band: {},
+        isRedirect: false
     }
 
     // componentDidMount() - retreives data on this concert
@@ -41,16 +42,16 @@ export default class OneConcert extends Component {
     deleteConcert = () => {
         axios.delete(`/api/concert/${this.props.match.params.concertId}`)
             .then((res) => {
-                // res.redirect('/concert')
+                this.setState({ isRedirect: true })
             })
     }
 
     // Rendered in Browser
     render() {
-
         const bandName = this.state.band.bandName           
-
         return (
+            this.state.isRedirect ?
+            <Redirect to="/concert" /> :    
             <div>
                 {/* Accessing the value of message from the state object */}
                 <h1>{this.state.concert.concertName}</h1>
