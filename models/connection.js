@@ -12,6 +12,8 @@ const mongoose = require('mongoose');
 const connectionString = process.env.MONGODB_URI || "mongodb://127.0.0.1/concert-app";
 
 
+
+
 /* Step 2
  *
  * Open up a connection to the mongo database.
