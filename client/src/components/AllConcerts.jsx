@@ -8,7 +8,10 @@ export default class AllConcerts extends Component {
 
     // AllConcerts Component State
     state = {
-        concertData: []
+        concertData: [],
+        newConcertName: '',
+        newConcertDate: '',
+        newConcertDescription: '',
     }
 
     // componentDidMount() - retreives /api/concert data
@@ -17,6 +20,26 @@ export default class AllConcerts extends Component {
             .then((res) => {
                 this.setState({ concertData: res.data })
             })
+    }
+
+
+    // createConcert() - posts concertName, date, description from input feilds(which are set to state) to the backend /api/concert
+    createConcert = () => {
+        const newConcert = {
+            concertName: this.state.newConcertName,
+            date: this.state.newConcertDate,
+            description: this.state.newConcertDescription
+        }
+        axios.post(`/api/concert`, newConcert)
+        .then((res) => {
+            this.componentDidMount()
+        })
+    }
+
+    // onConcertNameChange() - sets the state of newConcertName from the input feild for venue when called on a change contiuousely
+    onConcertNameChange = (evt) => {
+        const newConcertName = evt.target.value;
+        this.setState({ newConcertName: newConcertName})
     }
 
 
@@ -29,7 +52,7 @@ export default class AllConcerts extends Component {
                     <Link to={`/concert/${concertData._id}`}>
                         {concertData.concertName}
                     </Link>
-                    
+
                 </div>
             }
         )
@@ -41,6 +64,30 @@ export default class AllConcerts extends Component {
 
                 {listOfConcerts}
 
+
+                <input
+                    type="string"
+                    name="newConcertName"
+                    placeholder="Concert Name"
+                    required="required"
+                    onChange={this.onConcertNameChange}
+                    value={this.state.onConcertNameChange}
+                />
+
+                <input
+                    type="string"
+                    name="newConcertDate"
+                    placeholder="Concert Date"
+                    required="required"
+                />
+
+                <input
+                    type="string"
+                    name="newConcertDescription"
+                    placeholder="Concert Description"
+                />
+
+                <button onClick={() => this.createConcert()}>Create Concert</button>
             </div>
         )
     }
