@@ -30,12 +30,7 @@ export default class OneVenue extends Component {
             })
     }
 
-    /* Step 5
-    *  The render function manages what is shown in the browser
-    *  TODO: delete the jsx returned
-    *   and replace it with your own custom jsx template
-    *
-    */
+    // Rendered in Browser
     render() {
         return (
             <div>

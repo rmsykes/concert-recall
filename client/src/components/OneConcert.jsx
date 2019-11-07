@@ -22,12 +22,15 @@ export default class OneConcert extends Component {
             })
     }
 
-    /* Step 5
-    *  The render function manages what is shown in the browser
-    *  TODO: delete the jsx returned
-    *   and replace it with your own custom jsx template
-    *
-    */
+    // deleteConcert() - deletes concert by concertId from db api/concert
+    deleteConcert = () => {
+        axios.delete(`/api/concert/${this.props.match.params.concertId}`)
+        .then((res) => {
+            // res.redirect('/concert')
+        })
+    }
+
+    // Rendered in Browser
     render() {
         return (
             <div>
@@ -36,6 +39,7 @@ export default class OneConcert extends Component {
                 <h2>{this.state.concert.date}</h2>
                 <p>{this.state.concert.description}</p>
 
+                <button onClick={() => this.deleteConcert()}>Delete This Concert</button>
             </div>
         )
     }
