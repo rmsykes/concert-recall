@@ -18,7 +18,15 @@ export default class OneVenue extends Component {
     componentDidMount() {
         axios.get(`/api/venue/${this.props.match.params.venueId}`)
             .then((res) => {
-                this.setState({ venue: res.data})
+                this.setState({ venue: res.data })
+            })
+    }
+
+    // deleteVenue() - deletes this venue in the db when activated on click of button
+    deleteVenue = () => {
+        axios.delete(`/api/venue/${this.props.match.params.venueId}`)
+            .then((res) => {
+                // res.redirect('/venue')
             })
     }
 
@@ -35,6 +43,8 @@ export default class OneVenue extends Component {
                 <h1>{this.state.venue.venueName}</h1>
                 <h2>{this.state.venue.location}</h2>
                 <h2>{this.state.venue.capacity}</h2>
+
+                <button onClick={() => this.deleteVenue()}>Delete Venue</button>
             </div>
         )
     }
