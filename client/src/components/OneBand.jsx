@@ -28,6 +28,13 @@ export default class OneBand extends Component {
             })
     }
 
+    deleteBand = () => {
+        axios.delete(`/api/band/${this.props.match.params.bandId}`)
+        .then((res) => {
+            // res.redirect('/band')
+        })
+    }
+
     /* Step 5
     *  The render function manages what is shown in the browser
     *  TODO: delete the jsx returned
@@ -40,6 +47,8 @@ export default class OneBand extends Component {
                 {/* Accessing the value of message from the state object */}
                 <h1>{this.state.band.bandName}</h1>
                 <h2>{this.state.band.genre}</h2>
+
+                <button onClick={() => this.deleteBand(this.props.match.params.bandId)}>Delete Band</button>
             </div>
         )
     }
