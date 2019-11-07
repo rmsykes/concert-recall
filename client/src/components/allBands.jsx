@@ -2,6 +2,7 @@
 
 import React, { Component } from 'react'
 import axios from 'axios'
+import { Link } from 'react-router-dom'
 
 
 /* Step 2
@@ -61,7 +62,10 @@ export default class AllBands extends Component {
         const listOfBands = this.state.listOfBands.map(
             (band) => {
                 return <div>
-                    <h2>{band.bandName}</h2>
+                    <Link to={`/band/${band._id}`}>
+                        {band.bandName}
+                    </Link>
+
                 </div>
             })
 
@@ -70,6 +74,7 @@ export default class AllBands extends Component {
             <div>
                 {/* Accessing the value of message from the state object */}
                 <h1>Bands</h1>
+
                 {listOfBands}
 
                 <div>
@@ -87,9 +92,9 @@ export default class AllBands extends Component {
                         type="string"
                         name="newBandGenre"
                         placeholder="Genre"
-                        required="required" 
+                        required="required"
                         onChange={this.onBandGenreChange}
-                        value={this.state.onBandGenreChange}/>
+                        value={this.state.onBandGenreChange} />
 
                     <button onClick={() => this.createBand()}>Create Band</button>
                 </div>
