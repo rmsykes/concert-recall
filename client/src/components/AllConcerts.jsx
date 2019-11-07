@@ -1,7 +1,7 @@
-// Import React, { Component }, and Axios
+// Import React, { Component }, Axios, and { Link }
 import React, { Component } from 'react'
 import axios from 'axios'
-
+import { Link } from 'react-router-dom'
 
 // Create and Export AllConcerts Component
 export default class AllConcerts extends Component {
@@ -15,7 +15,7 @@ export default class AllConcerts extends Component {
     componentDidMount() {
         axios.get('/api/concert')
             .then((res) => {
-                this.setState({ concertData: res.data})
+                this.setState({ concertData: res.data })
             })
     }
 
@@ -25,8 +25,11 @@ export default class AllConcerts extends Component {
 
         const listOfConcerts = this.state.concertData.map(
             (concertData) => {
-                return <div> 
-                    {concertData.concertName}
+                return <div>
+                    <Link to={`/concert/${concertData._id}`}>
+                        {concertData.concertName}
+                    </Link>
+                    
                 </div>
             }
         )

@@ -33,6 +33,9 @@ export default class OneConcert extends Component {
             <div>
                 {/* Accessing the value of message from the state object */}
                 <h1>{this.state.concert.concertName}</h1>
+                <h2>{this.state.concert.date}</h2>
+                <p>{this.state.concert.description}</p>
+
             </div>
         )
     }
