@@ -2,6 +2,7 @@
 
 import React, { Component } from 'react'
 import axios from 'axios'
+import {Link} from 'react-router-dom'
 
 // Create and Export AllVenues Component
 export default class AllVenues extends Component {
@@ -27,7 +28,9 @@ export default class AllVenues extends Component {
         const listOfVenues = this.state.venueData.map(
             (venueData) => {
                 return <div>
-                    {venueData.venueName}
+                    <Link to={`/venue/${venueData._id}`}>
+                        {venueData.venueName}
+                    </Link>
                 </div>
             }
         )
