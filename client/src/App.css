@@ -1,5 +1,23 @@
 .App {
   text-align: center;
+  background-color: grey;
+  font-family: 'McLaren', cursive;
+}
+
+h1 {
+  margin: 20px 0px;
+  border: solid 5px black;
+  padding: 20px;
+}
+
+.link {
+  margin: 20px;
+  
+}
+
+.createForm {
+  border: 5px solid black;
+  padding-bottom: 30px;
 }
 
 .App-logo {

@@ -15,9 +15,9 @@ function App() {
       <Router>
         <Switch>
           <Route exact path="/band" component={AllBands}/>
-          <Route path="/band/:bandId" component={OneBand}/>
+          <Route exact path="/band/:bandId" component={OneBand}/>
           <Route exact path="/venue" component={AllVenues}/>
-          <Route path="/venue/:venueId" component={OneVenue}/>
+          <Route exact path="/venue/:venueId" component={OneVenue}/>
           <Route exact path="/concert" component={AllConcerts}/>
           <Route exact path="/concert/:concertId" component={OneConcert}/>
 

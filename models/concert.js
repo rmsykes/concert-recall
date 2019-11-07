@@ -6,8 +6,8 @@ const ConcertSchema = new mongoose.Schema({
   concertName: String,
   date: String,
   description: String,
-  bandId: mongoose.ObjectId,
-  venueId: mongoose.ObjectId
+  bandId: mongoose.Types.ObjectId,
+  venueId: mongoose.Types.ObjectId
 
 })
 
@@ -24,12 +24,12 @@ const getAllConcerts = () => {
 
 // // getAllConcertsByBandId()
 // const getAllConcertsByBandId = (bandId) => {
-//   return ConcertCollection.find({ bandId: bandId })
+//   return ConcertCollection.findById({ bandId: bandId })
 // }
 
 // // getAllConcertsByVenueId
 // const getAllConcertsByVenueId = (venueId) => {
-//   return ConcertCollection.find({ venueId: venueId })
+//   return ConcertCollection.findById({ venueId: venueId })
 // }
 
 // getOneConcert()

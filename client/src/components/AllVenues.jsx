@@ -62,7 +62,9 @@ export default class AllVenues extends Component {
             (venueData) => {
                 return <div>
                     <Link to={`/venue/${venueData._id}`}>
-                        {venueData.venueName}
+                        <div className='link'>
+                            {venueData.venueName}
+                        </div>
                     </Link>
                 </div>
             }
@@ -76,8 +78,8 @@ export default class AllVenues extends Component {
 
                 {listOfVenues}
 
-                <div>
-                    <h2>Create New Venue</h2>
+                <div className='createForm'>
+                    <h2>Create Venue</h2>
 
                     <input
                         type="string"

@@ -56,9 +56,10 @@ export default class AllBands extends Component {
             (band) => {
                 return <div>
                     <Link to={`/band/${band._id}`}>
-                        {band.bandName}
+                        <div className='link'>
+                            {band.bandName}
+                        </div>
                     </Link>
-
                 </div>
             })
 
@@ -70,8 +71,8 @@ export default class AllBands extends Component {
 
                 {listOfBands}
 
-                <div>
-                    <h2>Create New Band</h2>
+                <div className='createForm'>
+                    <h2>Create Band</h2>
 
                     <input
                         type="string"

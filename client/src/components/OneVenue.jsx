@@ -37,7 +37,7 @@ export default class OneVenue extends Component {
                 {/* Accessing the value of message from the state object */}
                 <h1>{this.state.venue.venueName}</h1>
                 <h2>{this.state.venue.location}</h2>
-                <h2>{this.state.venue.capacity}</h2>
+                <h2>Capacity: {this.state.venue.capacity}</h2>
 
                 <button onClick={() => this.deleteVenue()}>Delete Venue</button>
             </div>
