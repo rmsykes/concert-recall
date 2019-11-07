@@ -1,11 +1,11 @@
 import React from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
-import AllBands from './components/AllBands'
-import OneBand from './components/OneBand'
-import AllVenues from './components/AllVenues'
-import OneVenue from './components/OneVenue'
-import AllConcerts from './components/AllConcerts'
-import OneConcert from './components/OneConcert'
+import AllBands from './components/AllBands.jsx'
+import OneBand from './components/OneBand.jsx'
+import AllVenues from './components/AllVenues.jsx'
+import OneVenue from './components/OneVenue.jsx'
+import AllConcerts from './components/AllConcerts.jsx'
+import OneConcert from './components/OneConcert.jsx'
 
 import './App.css';
 
