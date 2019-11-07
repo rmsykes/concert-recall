@@ -29,8 +29,8 @@ export default class AllBands extends Component {
     // createBandOnClick() - posts band & genre from input feilds (which are set to state) to the backend /api/band
     createBand() {
         const newBand = {
-            newBandName: this.state.newBandName,
-            newBandGenre: this.state.newBandGenre
+            bandName: this.state.newBandName,
+            genre: this.state.newBandGenre
         }
         axios.post('/api/band', newBand)
             .then((res) => {
@@ -38,14 +38,17 @@ export default class AllBands extends Component {
             })
     }
 
-    // onBandNameChange() - sets the state of newBandName from th input feild for newBandName
+    // onBandNameChange() - sets the state of newBandName from the input feild for newBandName
     onBandNameChange = (evt) => {
         const newBandName = evt.target.value;
         this.setState({ newBandName: newBandName })
     }
 
 
-
+    onBandGenreChange = (evt) => {
+        const newBandGenre = evt.target.value;
+        this.setState({ newBandGenre: newBandGenre })
+    }
 
     /* Step 5
     *  The render function manages what is shown in the browser
@@ -84,7 +87,9 @@ export default class AllBands extends Component {
                         type="string"
                         name="newBandGenre"
                         placeholder="Genre"
-                        required="required" />
+                        required="required" 
+                        onChange={this.onBandGenreChange}
+                        value={this.state.onBandGenreChange}/>
 
                     <button onClick={() => this.createBand()}>Create Band</button>
                 </div>
