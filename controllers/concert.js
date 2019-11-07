@@ -18,6 +18,22 @@ concertRouter.get('/', (req, res) => {
   })
 })
 
+// getAllConcertsByBandId()
+concertRouter.get('/byBand/:bandId', (req, res) => {
+  concertApi.getAllConcertsByBandId({ bandId: req.params.bandId })
+  .then((concertsByBand) => {
+    res.json(concertsByBand)
+  })
+})
+
+// // getAllConcertsByVenueId
+// concertRouter.get('/:venueId', (req, res) => {
+//   concertApi.getAllConcertsByVenueId({ venueId: req.params.venueId})
+//   .then((concertByVenue) => {
+//     res.json(concertByVenue)
+//   })
+// })
+
 // getOneConcert()
 concertRouter.get('/:concertId', (req, res) => {
   concertApi.getOneConcert(req.params.concertId)
