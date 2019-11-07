@@ -28,8 +28,8 @@ export default class AllVenues extends Component {
     createVenue = () => {
         const newVenue = {
             venueName: this.state.newVenueName,
-            location: this.state.newVenuelocation,
-            capacity: this.state.newVenuecapacity
+            location: this.state.newVenueLocation,
+            capacity: this.state.newVenueCapacity
         }
         axios.post('/api/venue', newVenue)
             .then((res) => {
@@ -37,12 +37,23 @@ export default class AllVenues extends Component {
             })
     }
 
-    // onVenueNameChange() - sets the state of venueName from the input feild for venueName
+    // onVenueNameChange() - sets the state of newVenueName from the input feild for Venue Name on the page
     onVenueNameChange = (evt) => {
         const newVenueName = evt.target.value;
         this.setState({ newVenueName: newVenueName })
     }
 
+    // onVenueLocationChange() - sets the state of newVenueLocation from the input feild for Venue Location on the page
+    onVenueLocationChange = (evt) => {
+        const newVenueLocation = evt.target.value;
+        this.setState({ newVenueLocation: newVenueLocation })
+    }
+
+    // onVenueCapacityChange() - sets the state of newVenueCapacity
+    onVenueCapacityChange = (evt) => {
+        const newVenueCapacity = evt.target.value;
+        this.setState({ newVenueCapacity: newVenueCapacity})
+    }
 
     // Rendered in Browser
     render() {
@@ -82,12 +93,16 @@ export default class AllVenues extends Component {
                         name="venueLocation"
                         placeholder="Venue Location"
                         required="required"
+                        onChange={this.onVenueLocationChange}
+                        value={this.state.onVenueLocationChange}
                     />
 
                     <input
                         type="number"
                         name="venueCapacity"
                         placeholder="Venue Capacity"
+                        onChange={this.onVenueCapacityChange}
+                        value={this.state.onVenueCapacityChange}
                     />
 
                     <button onClick={() => this.createVenue()}>Create Venue</button>
