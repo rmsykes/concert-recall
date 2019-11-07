@@ -36,10 +36,22 @@ export default class AllConcerts extends Component {
         })
     }
 
-    // onConcertNameChange() - sets the state of newConcertName from the input feild for venue when called on a change contiuousely
+    // onConcertNameChange() - sets the state of newConcertName from the input feild for Concert Name when called on a change contiuousely
     onConcertNameChange = (evt) => {
         const newConcertName = evt.target.value;
         this.setState({ newConcertName: newConcertName})
+    }
+
+    // onConcertDateChange() - sets the state of newConcertDate from the input feild for Concert Date when called on a change contiuousely
+    onConcertDateChange = (evt) => {
+        const newConcertDate = evt.target.value;
+        this.setState({ newConcertDate: newConcertDate })
+    }
+
+    // onConcertDescriptionChange() - sets the state of newConcertDescription from the input feild for Concert Description when called on a change continuously
+    onConcertDescriptionChange = (evt) => {
+        const newConcertDescription = evt.target.value;
+        this.setState({ newConcertDescription: newConcertDescription })
     }
 
 
@@ -79,12 +91,16 @@ export default class AllConcerts extends Component {
                     name="newConcertDate"
                     placeholder="Concert Date"
                     required="required"
+                    onChange={this.onConcertDateChange}
+                    value={this.state.onConcertDateChange}
                 />
 
                 <input
                     type="string"
                     name="newConcertDescription"
                     placeholder="Concert Description"
+                    onChange={this.onConcertDescriptionChange}
+                    value={this.state.onConcertDescriptionChange}
                 />
 
                 <button onClick={() => this.createConcert()}>Create Concert</button>
