@@ -1,0 +1,41 @@
+// Import React, { Component }, and axios
+import React, { Component } from 'react'
+import axios from 'axios'
+
+// create and export OneVenue Component
+export default class OneVenue extends Component {
+
+    // OneVenue Component State
+    state = {
+        venue: {
+            venueName: '',
+            location: '',
+            capacity: Number
+        }
+    }
+
+    // componentDidMount() - retrieves data on this venue
+    componentDidMount() {
+        axios.get(`/api/venue/${this.props.match.params.venueId}`)
+            .then((res) => {
+                this.setState({ venue: res.data})
+            })
+    }
+
+    /* Step 5
+    *  The render function manages what is shown in the browser
+    *  TODO: delete the jsx returned
+    *   and replace it with your own custom jsx template
+    *
+    */
+    render() {
+        return (
+            <div>
+                {/* Accessing the value of message from the state object */}
+                <h1>{this.state.venue.venueName}</h1>
+                <h2>{this.state.venue.location}</h2>
+                <h2>{this.state.venue.capacity}</h2>
+            </div>
+        )
+    }
+}

@@ -33,9 +33,7 @@ app.use(express.json())
  */
 app.use(express.static(`${__dirname}/client/build`))
 
-app.get('/hello', (req, res) => {
-    res.send('hello')
-})
+
 /* Step 4
  *
  * add router for the application to use. The first argument is a prefix to all

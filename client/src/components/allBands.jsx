@@ -1,14 +1,11 @@
-// Step 1 import React, { Component } and axios
+// Step 1 import React, { Component }, axios, and { Link }
 
 import React, { Component } from 'react'
 import axios from 'axios'
 import { Link } from 'react-router-dom'
 
 
-/* Step 2
- * Rename this class to reflect the component being created
- *
- */
+// Create and Export AllBands Component
 export default class AllBands extends Component {
 
     // AllBands Component State
@@ -18,7 +15,7 @@ export default class AllBands extends Component {
         newBandGenre: ''
     }
 
-    // componentDidMount() to retreive band data
+    // componentDidMount() to retreive /api/band data
     componentDidMount() {
         axios.get('/api/band')
             .then((res) => {
@@ -27,7 +24,7 @@ export default class AllBands extends Component {
     }
 
 
-    // createBandOnClick() - posts band & genre from input feilds (which are set to state) to the backend /api/band
+    // createBand() - posts band & genre from input feilds (which are set to state) to the backend /api/band
     createBand() {
         const newBand = {
             bandName: this.state.newBandName,
@@ -45,18 +42,14 @@ export default class AllBands extends Component {
         this.setState({ newBandName: newBandName })
     }
 
-
+    // onBandGenreChanve() - sets the state of the newGenreName from input feild for newBandGenre
     onBandGenreChange = (evt) => {
         const newBandGenre = evt.target.value;
         this.setState({ newBandGenre: newBandGenre })
     }
 
-    /* Step 5
-    *  The render function manages what is shown in the browser
-    *  TODO: delete the jsx returned
-    *   and replace it with your own custom jsx template
-    *
-    */
+
+    // Rendered in Browser
     render() {
 
         const listOfBands = this.state.listOfBands.map(

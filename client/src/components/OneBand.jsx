@@ -14,13 +14,7 @@ export default class OneBand extends Component {
         }
     }
 
-    /* Step 4
-    * Use componentDidMount to retrieve any data to display
-    *   Here you can make calls to your local express server
-    *   or to an external API
-    *   setState can be run here as well
-    *   -REMINDER remember `setState` it is an async function
-    */
+    // componentDidMount() to retreive data on this band 
     componentDidMount() {
         axios.get(`/api/band/${this.props.match.params.bandId}`)
             .then((res) => {
@@ -28,6 +22,7 @@ export default class OneBand extends Component {
             })
     }
 
+    // deleteBand() deletes this band in the database on when activated on click from button
     deleteBand = () => {
         axios.delete(`/api/band/${this.props.match.params.bandId}`)
         .then((res) => {
@@ -35,12 +30,8 @@ export default class OneBand extends Component {
         })
     }
 
-    /* Step 5
-    *  The render function manages what is shown in the browser
-    *  TODO: delete the jsx returned
-    *   and replace it with your own custom jsx template
-    *
-    */
+    
+    // Rendered in Browser
     render() {
         return (
             <div>
