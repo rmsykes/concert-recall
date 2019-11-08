@@ -18,7 +18,7 @@ export default class OneConcert extends Component {
         isRedirect: false
     }
 
-    // componentDidMount() - retreives data on this concert
+    // componentDidMount() - retreives data on this concert & band data
     componentDidMount() {
         axios.get(`/api/concert/${this.props.match.params.concertId}`)
             .then((res) => {
@@ -50,8 +50,9 @@ export default class OneConcert extends Component {
     render() {
         const bandName = this.state.band.bandName           
         return (
-            this.state.isRedirect ?
-            <Redirect to="/concert" /> :    
+            
+            this.state.isRedirect ? <Redirect to="/concert" /> : 
+
             <div>
                 {/* Accessing the value of message from the state object */}
                 <h1>{this.state.concert.concertName}</h1>

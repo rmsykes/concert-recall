@@ -2,6 +2,7 @@
 
 import React, { Component } from 'react'
 import axios from 'axios'
+import {Redirect} from 'react-router-dom'
 
 // create and export OneBand Component
 export default class OneBand extends Component {
@@ -11,7 +12,8 @@ export default class OneBand extends Component {
         band: {
             bandName: '',
             genre: ''
-        }
+        },
+        isRedirect: false
     }
 
     // componentDidMount() to retreive data on this band 
@@ -26,7 +28,7 @@ export default class OneBand extends Component {
     deleteBand = () => {
         axios.delete(`/api/band/${this.props.match.params.bandId}`)
         .then((res) => {
-            // res.redirect('/band')
+            this.setState({ isRedirect: true })
         })
     }
 
@@ -34,12 +36,15 @@ export default class OneBand extends Component {
     // Rendered in Browser
     render() {
         return (
+
+            this.state.isRedirect ? <Redirect to='/band' /> :
+
             <div>
                 {/* Accessing the value of message from the state object */}
                 <h1>{this.state.band.bandName}</h1>
                 <h2>{this.state.band.genre}</h2>
 
-                <button onClick={() => this.deleteBand(this.props.match.params.bandId)}>Delete Band</button>
+                <button onClick={() => this.deleteBand()}>Delete Band</button>
             </div>
         )
     }

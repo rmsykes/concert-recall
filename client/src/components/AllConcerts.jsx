@@ -18,7 +18,7 @@ export default class AllConcerts extends Component {
         listOfBands: [],
     }
 
-    // componentDidMount() - retreives /api/concert data
+    // componentDidMount() - retreives /api/concert data & runs getBands() to get /api/band data
     componentDidMount() {
         axios.get('/api/concert')
             .then((res) => {
@@ -27,7 +27,7 @@ export default class AllConcerts extends Component {
         this.getBands()
     }
 
-    // getBands() - 
+    // getBands() - retreives /api/band data
     getBands = () => {
             axios.get('/api/band')
             .then((res) => {
@@ -37,8 +37,8 @@ export default class AllConcerts extends Component {
 
 
     // createConcert() - posts concertName, date, description from input feilds(which are set to state) to the backend /api/concert
-    createConcert = (e) => {
-        e.preventDefault()
+    createConcert = (evt) => {
+        evt.preventDefault()
         const newConcert = this.state.newConcert
         
         axios.post(`/api/concert`, newConcert)
