@@ -12,9 +12,11 @@ export default class OneConcert extends Component {
             concertName: '',
             date: '',
             description: '',
-            bandId: ''
+            bandId: '',
+            venueId: ''
         },
         band: {},
+        venue: {},
         isRedirect: false
     }
 
@@ -27,6 +29,9 @@ export default class OneConcert extends Component {
             .then(() => {
                 this.getOneBand()
             })
+            .then(() => {
+                this.getOneVenue()
+            })
     }
 
 
@@ -37,6 +42,12 @@ export default class OneConcert extends Component {
             })
     }
 
+    getOneVenue = () => {
+        axios.get(`/api/venue/${this.state.concert.venueId}`)
+            .then((res) => {
+                this.setState({ venue: res.data })
+            })
+    }
 
     // deleteConcert() - deletes concert by concertId from db api/concert
     deleteConcert = () => {
@@ -48,9 +59,10 @@ export default class OneConcert extends Component {
 
     // Rendered in Browser
     render() {
-        const bandName = this.state.band.bandName           
+        const bandName = this.state.band.bandName
+        const venueName = this.state.venue.venueName           
         return (
-            
+
             this.state.isRedirect ? <Redirect to="/concert" /> : 
 
             <div>
@@ -58,6 +70,7 @@ export default class OneConcert extends Component {
                 <h1>{this.state.concert.concertName}</h1>
 
                 <h2><Link to={`/band/${this.state.concert.bandId}`}>{bandName}</Link></h2>
+                <h2><Link to={`/venue/${this.state.concert.venueId}`}>{venueName}</Link></h2>
 
                 <h2>{this.state.concert.date}</h2>
                 <p>{this.state.concert.description}</p>

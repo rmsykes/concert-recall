@@ -13,34 +13,44 @@ export default class AllConcerts extends Component {
             concertName: '',
             date: '',
             description: '',
-            bandId: ''
+            bandId: '',
+            venueId: ''
         },
-        listOfBands: [],
+        bandData: [],
+        venueData: []
     }
 
-    // componentDidMount() - retreives /api/concert data & runs getBands() to get /api/band data
+    // componentDidMount() - retreives /api/concert data & runs getBandData() to get /api/band data
     componentDidMount() {
         axios.get('/api/concert')
             .then((res) => {
                 this.setState({ concertData: res.data })
             })
-        this.getBands()
+        this.getBandData()
+        this.getVenueData()
     }
 
-    // getBands() - retreives /api/band data
-    getBands = () => {
-            axios.get('/api/band')
+    // getBandData() - retreives /api/band data
+    getBandData = () => {
+        axios.get('/api/band')
             .then((res) => {
-                this.setState({ listOfBands: res.data })
+                this.setState({ bandData: res.data })
             })
     }
 
+    // getVenueData() - retreives /api/venue data
+    getVenueData = () => {
+        axios.get('/api/venue')
+            .then((res) => {
+                this.setState({ venueData: res.data })
+            })
+    }
 
     // createConcert() - posts concertName, date, description from input feilds(which are set to state) to the backend /api/concert
     createConcert = (evt) => {
         evt.preventDefault()
         const newConcert = this.state.newConcert
-        
+
         axios.post(`/api/concert`, newConcert)
             .then((res) => {
                 this.componentDidMount()
@@ -49,7 +59,7 @@ export default class AllConcerts extends Component {
 
     // onConcertNameChange() - sets the state of newConcertName from the input feild for Concert Name when called on a change contiuousely
     handleInputChange = (evt) => {
-        const copiedNewConcert = {...this.state.newConcert}
+        const copiedNewConcert = { ...this.state.newConcert }
         copiedNewConcert[evt.target.name] = evt.target.value;
         this.setState({ newConcert: copiedNewConcert })
     }
@@ -62,7 +72,7 @@ export default class AllConcerts extends Component {
             (concertData) => {
                 return <div>
                     <Link to={`/concert/${concertData._id}`}>
-                        <div  className="link">
+                        <div className="link">
                             {concertData.concertName}
                         </div>
                     </Link>
@@ -76,53 +86,67 @@ export default class AllConcerts extends Component {
                 {/* Accessing the value of message from the state object */}
                 <h1>Concerts</h1>
 
-                
+
                 {listOfConcerts}
-               
+
 
                 <div className='createForm'>
-                <form onSubmit={this.createConcert}>
-                    <h2>Create Concert</h2>
-                    <input
-                        type="string"
-                        name="concertName"
-                        placeholder="Concert Name"
-                        required="required"
-                        onChange={this.handleInputChange}
-                        value={this.state.newConcert.newConcertName}
-                    />
+                    <form onSubmit={this.createConcert}>
+                        <h2>Create Concert</h2>
+                        <input
+                            type="string"
+                            name="concertName"
+                            placeholder="Concert Name"
+                            required="required"
+                            onChange={this.handleInputChange}
+                            value={this.state.newConcert.newConcertName}
+                        />
 
-                    <input
-                        type="string"
-                        name="date"
-                        placeholder="Concert Date"
-                        required="required"
-                        onChange={this.handleInputChange}
-                        value={this.state.newConcert.newConcertDate}
-                    />
+                        <input
+                            type="string"
+                            name="date"
+                            placeholder="Concert Date"
+                            required="required"
+                            onChange={this.handleInputChange}
+                            value={this.state.newConcert.newConcertDate}
+                        />
 
-                    <input
-                        type="string"
-                        name="description"
-                        placeholder="Concert Description"
-                        onChange={this.handleInputChange}
-                        value={this.state.newConcert.newConcertDescription}
-                    />
+                        <input
+                            type="string"
+                            name="description"
+                            placeholder="Concert Description"
+                            onChange={this.handleInputChange}
+                            value={this.state.newConcert.newConcertDescription}
+                        />
 
-                    <select 
-                        name="bandId"
-                        onChange={this.handleInputChange}
-                        value={this.state.newConcert.bandId}
-                         >
-                        {this.state.listOfBands.map(
-                            (band) => {
-                                return <option value={band._id}>{band.bandName}</option>
-                            }
-                        )}
+                        <select
+                            name="bandId"
+                            onChange={this.handleInputChange}
+                            value={this.state.newConcert.bandId}
+                        >
+                            {this.state.bandData.map(
+                                (band) => {
+                                    return <option value={band._id}>{band.bandName}</option>
+                                }
+                            )}
+                        </select>
 
-                    </select>
-                    <input type="submit" value="Create Concert"/>
-                </form>
+                        <select
+                            name="venueId"
+                            onChange={this.handleInputChange}
+                            value={this.state.newConcert.venueId}
+                        >
+                            {this.state.venueData.map(
+                                (venue) => {
+                                    return <option value={venue._id}>{venue.venueName}</option>
+                                }
+                            )}
+
+
+                        </select>
+
+                        <input type="submit" value="Create Concert" />
+                    </form>
                     {/* <button onClick={() => this.createConcert()}>Create Concert</button> */}
                 </div>
             </div>

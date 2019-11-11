@@ -1,6 +1,7 @@
 // Import React, { Component }, and axios
 import React, { Component } from 'react'
 import axios from 'axios'
+import {Redirect} from 'react-router-dom'
 
 // create and export OneVenue Component
 export default class OneVenue extends Component {
@@ -11,7 +12,8 @@ export default class OneVenue extends Component {
             venueName: '',
             location: '',
             capacity: Number
-        }
+        },
+        isRedirect: false
     }
 
     // componentDidMount() - retrieves data on this venue
@@ -26,13 +28,16 @@ export default class OneVenue extends Component {
     deleteVenue = () => {
         axios.delete(`/api/venue/${this.props.match.params.venueId}`)
             .then((res) => {
-                // res.redirect('/venue')
+                this.setState({ isRedirect: true })
             })
     }
 
     // Rendered in Browser
     render() {
         return (
+            
+            this.state.isRedirect ? <Redirect to='/venue' /> :
+
             <div>
                 {/* Accessing the value of message from the state object */}
                 <h1>{this.state.venue.venueName}</h1>
