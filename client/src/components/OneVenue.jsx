@@ -1,7 +1,7 @@
 // Import React, { Component }, and axios
 import React, { Component } from 'react'
 import axios from 'axios'
-import {Redirect} from 'react-router-dom'
+import {Redirect, Link} from 'react-router-dom'
 
 // create and export OneVenue Component
 export default class OneVenue extends Component {
@@ -39,7 +39,14 @@ export default class OneVenue extends Component {
             this.state.isRedirect ? <Redirect to='/venue' /> :
 
             <div>
-                {/* Accessing the value of message from the state object */}
+
+                <nav>
+                    <Link to='/'>Home</Link>
+                    <Link to='/concert'>Concerts</Link>
+                    <Link to='/band'>Bands</Link>
+                    <Link to='/venue'>Venues</Link>
+                </nav>
+
                 <h1>{this.state.venue.venueName}</h1>
                 <h2>{this.state.venue.location}</h2>
                 <h2>Capacity: {this.state.venue.capacity}</h2>

@@ -66,7 +66,14 @@ export default class OneConcert extends Component {
             this.state.isRedirect ? <Redirect to="/concert" /> : 
 
             <div>
-                {/* Accessing the value of message from the state object */}
+                
+                <nav>
+                    <Link to='/'>Home</Link>
+                    <Link to='/concert'>Concerts</Link>
+                    <Link to='/band'>Bands</Link>
+                    <Link to='/venue'>Venues</Link>
+                </nav>
+
                 <h1>{this.state.concert.concertName}</h1>
 
                 <h2><Link to={`/band/${this.state.concert.bandId}`}>{bandName}</Link></h2>

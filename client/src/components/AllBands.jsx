@@ -66,7 +66,14 @@ export default class AllBands extends Component {
 
         return (
             <div>
-                {/* Accessing the value of message from the state object */}
+                
+                <nav>
+                    <Link to='/'>Home</Link>
+                    <Link to='/concert'>Concerts</Link>
+                    <Link to='/band'>Bands</Link>
+                    <Link to='/venue'>Venues</Link>
+                </nav>
+
                 <h1>Bands</h1>
 
                 {listOfBands}

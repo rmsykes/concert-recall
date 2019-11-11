@@ -52,7 +52,7 @@ export default class AllVenues extends Component {
     // onVenueCapacityChange() - sets the state of newVenueCapacity
     onVenueCapacityChange = (evt) => {
         const newVenueCapacity = evt.target.value;
-        this.setState({ newVenueCapacity: newVenueCapacity})
+        this.setState({ newVenueCapacity: newVenueCapacity })
     }
 
     // Rendered in Browser
@@ -73,7 +73,14 @@ export default class AllVenues extends Component {
 
         return (
             <div>
-                {/* Accessing the value of message from the state object */}
+
+                <nav>
+                    <Link to='/'>Home</Link>
+                    <Link to='/concert'>Concerts</Link>
+                    <Link to='/band'>Bands</Link>
+                    <Link to='/venue'>Venues</Link>
+                </nav>
+
                 <h1>Venues</h1>
 
                 {listOfVenues}

@@ -68,6 +68,7 @@ export default class AllConcerts extends Component {
     // Rendered in Browser
     render() {
 
+
         const listOfConcerts = this.state.concertData.map(
             (concertData) => {
                 return <div>
@@ -84,6 +85,13 @@ export default class AllConcerts extends Component {
         return (
             <div>
                 {/* Accessing the value of message from the state object */}
+                <nav>
+                    <Link to='/'>Home</Link>
+                    <Link to='/concert'>Concerts</Link>
+                    <Link to='/band'>Bands</Link>
+                    <Link to='/venue'>Venues</Link>
+                </nav>
+                
                 <h1>Concerts</h1>
 
 

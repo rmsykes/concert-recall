@@ -2,7 +2,7 @@
 
 import React, { Component } from 'react'
 import axios from 'axios'
-import {Redirect} from 'react-router-dom'
+import {Redirect, Link} from 'react-router-dom'
 
 // create and export OneBand Component
 export default class OneBand extends Component {
@@ -40,7 +40,14 @@ export default class OneBand extends Component {
             this.state.isRedirect ? <Redirect to='/band' /> :
 
             <div>
-                {/* Accessing the value of message from the state object */}
+
+                <nav>
+                    <Link to='/'>Home</Link>
+                    <Link to='/concert'>Concerts</Link>
+                    <Link to='/band'>Bands</Link>
+                    <Link to='/venue'>Venues</Link>
+                </nav>
+
                 <h1>{this.state.band.bandName}</h1>
                 <h2>{this.state.band.genre}</h2>
 
