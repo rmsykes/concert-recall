@@ -76,8 +76,8 @@ export default class OneConcert extends Component {
 
                     <h1>{this.state.concert.concertName}</h1>
 
-                    <h2><Link to={`/band/${this.state.concert.bandId}`}>{bandName}</Link></h2>
-                    <h2><Link to={`/venue/${this.state.concert.venueId}`}>{venueName}</Link></h2>
+                    <Link to={`/band/${this.state.concert.bandId}`}><h2>{bandName}</h2></Link>
+                    <Link to={`/venue/${this.state.concert.venueId}`}><h2>{venueName}</h2></Link>
 
                     <h2>{this.state.concert.date}</h2>
                     <p>{this.state.concert.description}</p>
