@@ -5,7 +5,11 @@ const mongoose = require('./connection.js')
 // CREATE BAND SCHEMA
 const BandSchema = new mongoose.Schema({
   bandName: String,
-  genre: String
+  genre: String,
+  concertVideoOne: String,
+  concertVideoTwo: String,
+  concertVideoThree: String
+
 })
 
 

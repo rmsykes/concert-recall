@@ -6,7 +6,8 @@ const mongoose = require('./connection.js')
 const VenueSchema = new mongoose.Schema({
   venueName: String,
   location: String,
-  capacity: Number
+  capacity: Number,
+  venuePhoto: String
 })
 
 

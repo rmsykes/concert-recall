@@ -11,9 +11,9 @@ export default class AllVenues extends Component {
     state = {
         venueData: [],
         newVenueName: '',
-        newVenueLcocation: '',
-        newVenuecapacity: Number
-
+        newVenueLocation: '',
+        newVenuecapacity: Number,
+        newVenuePhoto: ''
     }
 
     // componentDidMount() - retreives /api/venue data
@@ -29,7 +29,8 @@ export default class AllVenues extends Component {
         const newVenue = {
             venueName: this.state.newVenueName,
             location: this.state.newVenueLocation,
-            capacity: this.state.newVenueCapacity
+            capacity: this.state.newVenueCapacity,
+            venuePhoto: this.state.newVenuePhoto
         }
         axios.post('/api/venue', newVenue)
             .then((res) => {
@@ -53,6 +54,11 @@ export default class AllVenues extends Component {
     onVenueCapacityChange = (evt) => {
         const newVenueCapacity = evt.target.value;
         this.setState({ newVenueCapacity: newVenueCapacity })
+    }
+
+    onVenuePhotoChange = (evt) => {
+        const newVenuePhoto = evt.target.value;
+        this.setState({ newVenuePhoto: newVenuePhoto })
     }
 
     // Rendered in Browser
@@ -113,6 +119,15 @@ export default class AllVenues extends Component {
                         onChange={this.onVenueCapacityChange}
                         value={this.state.onVenueCapacityChange}
                     />
+
+                    <input
+                        type="string"
+                        name="newVenuePhoto"
+                        placeholder="Venue Photo"
+                        onChange={this.onVenuePhotoChange}
+                        value={this.state.onVenuePhotoChange}
+                    />
+
 
                     <button onClick={() => this.createVenue()}>Create Venue</button>
                 </div>

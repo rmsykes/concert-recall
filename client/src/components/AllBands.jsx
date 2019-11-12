@@ -12,7 +12,10 @@ export default class AllBands extends Component {
     state = {
         listOfBands: [],
         newBandName: '',
-        newBandGenre: ''
+        newBandGenre: '',
+        newConcertVideoOne: '',
+        newConcertVideoTwo: '',
+        newConcertVideoThree: ''
     }
 
     // componentDidMount() to retreive /api/band data
@@ -28,7 +31,10 @@ export default class AllBands extends Component {
     createBand() {
         const newBand = {
             bandName: this.state.newBandName,
-            genre: this.state.newBandGenre
+            genre: this.state.newBandGenre,
+            concertVideoOne: this.state.newConcertVideoOne,
+            concertVideoTwo: this.state.newConcertVideoTwo,
+            concertVideoThree: this.state.newConcertVideoThree
         }
         axios.post('/api/band', newBand)
             .then((res) => {
@@ -42,12 +48,28 @@ export default class AllBands extends Component {
         this.setState({ newBandName: newBandName })
     }
 
-    // onBandGenreChanve() - sets the state of the newGenreName from input feild for newBandGenre
+    // onBandGenreChange() - sets the state of the newGenreName from input feild for newBandGenre
     onBandGenreChange = (evt) => {
         const newBandGenre = evt.target.value;
         this.setState({ newBandGenre: newBandGenre })
     }
 
+
+    onNewConcertVideoOneChange = (evt) => {
+        const newConcertVideoOne = evt.target.value;
+        this.setState({ newConcertVideoOne: newConcertVideoOne })
+    }
+
+
+    onNewConcertVideoTwoChange = (evt) => {
+        const newConcertVideoTwo = evt.target.value;
+        this.setState({ newConcertVideoTwo: newConcertVideoTwo })
+    }
+
+    onNewConcertVideoThreeChange = (evt) => {
+        const newConcertVideoThree = evt.target.value;
+        this.setState({ newConcertVideoThree: newConcertVideoThree })
+    }
 
     // Rendered in Browser
     render() {
@@ -98,8 +120,30 @@ export default class AllBands extends Component {
                         onChange={this.onBandGenreChange}
                         value={this.state.onBandGenreChange} />
 
-                    
+                    <input
+                        type='string'
+                        name='newConcertVideoOne'
+                        placeholder='Video One'
+                        onChange={this.onNewConcertVideoOneChange}
+                        value={this.state.onNewConcertVideoOneChange}
+                    />
 
+
+                    <input
+                        type='string'
+                        name='newConcertVideoTwo'
+                        placeholder='Video Two'
+                        onChange={this.onNewConcertVideoTwoChange}
+                        value={this.state.onNewConcertVideoTwoChange}
+                    />
+
+                    <input
+                        type='string'
+                        name='newConcertVideoThree'
+                        placeholder='Video Three'
+                        onChange={this.onNewConcertVideoThreeChange}
+                        value={this.state.onNewConcertVideoThreeChange}
+                    />
 
                     <button onClick={() => this.createBand()}>Create Band</button>
                 </div>

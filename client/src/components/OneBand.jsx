@@ -3,6 +3,7 @@
 import React, { Component } from 'react'
 import axios from 'axios'
 import { Redirect, Link } from 'react-router-dom'
+import ReactPlayer from 'react-player'
 
 // create and export OneBand Component
 export default class OneBand extends Component {
@@ -11,7 +12,11 @@ export default class OneBand extends Component {
     state = {
         band: {
             bandName: '',
-            genre: ''
+            genre: '',
+            concertVideoOne: '',
+            concertVideoTwo: '',
+            concertVideoThree: '',
+            
         },
         isRedirect: false
     }
@@ -50,6 +55,26 @@ export default class OneBand extends Component {
 
                     <h1>{this.state.band.bandName}</h1>
                     <h2>{this.state.band.genre}</h2>
+
+                    <h2>Featured Concerts</h2>
+
+                    <div className='videos'>
+                        <ReactPlayer
+                            url={this.state.band.concertVideoOne}
+                        />
+                    </div>
+
+                    <div className='videos'>
+                        <ReactPlayer
+                            url={this.state.band.concertVideoTwo}
+                        />
+                    </div>
+
+                    <div className='videos'>
+                        <ReactPlayer
+                            url={this.state.band.concertVideoThree}
+                        />
+                    </div>
 
                     <button onClick={() => this.deleteBand()}>Delete Band</button>
                 </div>
