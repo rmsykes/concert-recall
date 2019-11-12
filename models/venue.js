@@ -7,7 +7,8 @@ const VenueSchema = new mongoose.Schema({
   venueName: String,
   location: String,
   capacity: Number,
-  venuePhoto: String
+  venuePhotoOne: String,
+  venuePhotoTwo: String
 })
 
 

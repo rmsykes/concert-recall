@@ -12,7 +12,8 @@ export default class OneVenue extends Component {
             venueName: '',
             location: '',
             capacity: Number,
-            venuePhoto: ''
+            venuePhotoOne: '',
+            venuePhotoTwo: ''
         },
         isRedirect: false
     }
@@ -51,8 +52,12 @@ export default class OneVenue extends Component {
                     <h1>{this.state.venue.venueName}</h1>
                     <h2>{this.state.venue.location}</h2>
                     <h2>Capacity: {this.state.venue.capacity}</h2>
+                    <br/>
 
-                    <img src={this.state.venue.venuePhoto} alt="Venue Photo"/>
+                    <img src={this.state.venue.venuePhotoOne} alt="Venue Photo"/>
+                    <br/>
+
+                    <img src={this.state.venue.venuePhotoTwo} alt="Venue Photo"/>
                     <br/>
 
                     <button onClick={() => this.deleteVenue()}>Delete Venue</button>

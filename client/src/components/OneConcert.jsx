@@ -87,7 +87,7 @@ export default class OneConcert extends Component {
                     <Link to={`/venue/${this.state.concert.venueId}`}><h2>{venueName}</h2></Link>
 
                     
-                    <p>{this.state.concert.description}</p>
+                    <h3>{this.state.concert.description}</h3>
 
 
                     <div className='videos'>

@@ -13,7 +13,8 @@ export default class AllVenues extends Component {
         newVenueName: '',
         newVenueLocation: '',
         newVenuecapacity: Number,
-        newVenuePhoto: ''
+        newVenuePhotoOne: '',
+        newVenuePhotoTwo: ''
     }
 
     // componentDidMount() - retreives /api/venue data
@@ -30,7 +31,8 @@ export default class AllVenues extends Component {
             venueName: this.state.newVenueName,
             location: this.state.newVenueLocation,
             capacity: this.state.newVenueCapacity,
-            venuePhoto: this.state.newVenuePhoto
+            venuePhotoOne: this.state.newVenuePhotoOne,
+            venuePhotoTwo: this.state.newVenuePhotoTwo
         }
         axios.post('/api/venue', newVenue)
             .then((res) => {
@@ -56,9 +58,14 @@ export default class AllVenues extends Component {
         this.setState({ newVenueCapacity: newVenueCapacity })
     }
 
-    onVenuePhotoChange = (evt) => {
-        const newVenuePhoto = evt.target.value;
-        this.setState({ newVenuePhoto: newVenuePhoto })
+    onVenuePhotoOneChange = (evt) => {
+        const newVenuePhotoOne = evt.target.value;
+        this.setState({ newVenuePhotoOne: newVenuePhotoOne })
+    }
+
+    onVenuePhotoTwoChange = (evt) => {
+        const newVenuePhotoTwo = evt.target.value;
+        this.setState({ newVenuePhotoTwo: newVenuePhotoTwo })
     }
 
     // Rendered in Browser
@@ -122,12 +129,19 @@ export default class AllVenues extends Component {
 
                     <input
                         type="string"
-                        name="newVenuePhoto"
+                        name="newVenuePhotoOne"
                         placeholder="Venue Photo"
-                        onChange={this.onVenuePhotoChange}
-                        value={this.state.onVenuePhotoChange}
+                        onChange={this.onVenuePhotoOneChange}
+                        value={this.state.onVenuePhotoOneChange}
                     />
 
+                    <input
+                        type="string"
+                        name="newVenuePhotoTwo"
+                        placeholder="Venue Photo"
+                        onChange={this.onVenuePhotoTwoChange}
+                        value={this.state.onVenuePhotoTwoChange}
+                    />
 
                     <button onClick={() => this.createVenue()}>Create Venue</button>
                 </div>

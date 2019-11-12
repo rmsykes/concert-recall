@@ -54,11 +54,12 @@ nav {
 .videos {
   display: flex;
   justify-content: center;
-  margin: 0 0 35px 0;
+  margin: 100px 0;
 }
 
 img {
   width: 400px;
+  margin-bottom: 40px;
 }
 
 .createForm {
