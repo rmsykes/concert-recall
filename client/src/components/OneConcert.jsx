@@ -84,14 +84,20 @@ export default class OneConcert extends Component {
                     </div>
                     
 
-                    <h2>{this.state.concert.date}</h2>
 
                     <Link to={`/band/${this.state.concert.bandId}`}><h2>{bandName}</h2></Link>
                     <Link to={`/venue/${this.state.concert.venueId}`}><h2>{venueName}</h2></Link>
 
                     <br/>
+                    <h2>{this.state.concert.date}</h2>
+
+                    <br/>
+                    <h2>Show Description:</h2>
                     <h3>{this.state.concert.description}</h3>
 
+                    <br/>
+
+                    <h2>Videos from the Show:</h2>
 
                     <div className='videos'>
                         <ReactPlayer
