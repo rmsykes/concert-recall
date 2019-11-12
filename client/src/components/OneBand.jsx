@@ -16,7 +16,7 @@ export default class OneBand extends Component {
             concertVideoOne: '',
             concertVideoTwo: '',
             concertVideoThree: '',
-            
+            bandPhoto: ''
         },
         isRedirect: false
     }
@@ -55,6 +55,11 @@ export default class OneBand extends Component {
 
                     <div className='title'>
                         <h1>{this.state.band.bandName}</h1>
+                    </div>
+
+                    <div>
+                    <img src={this.state.band.bandPhoto} alt="Band Photo"/>
+
                     </div>
 
                     <h2>{this.state.band.genre}</h2>

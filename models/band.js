@@ -8,7 +8,8 @@ const BandSchema = new mongoose.Schema({
   genre: String,
   concertVideoOne: String,
   concertVideoTwo: String,
-  concertVideoThree: String
+  concertVideoThree: String,
+  bandPhoto: String
 
 })
 

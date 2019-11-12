@@ -15,7 +15,8 @@ export default class AllBands extends Component {
         newBandGenre: '',
         newConcertVideoOne: '',
         newConcertVideoTwo: '',
-        newConcertVideoThree: ''
+        newConcertVideoThree: '',
+        newBandPhoto: ''
     }
 
     // componentDidMount() to retreive /api/band data
@@ -34,7 +35,8 @@ export default class AllBands extends Component {
             genre: this.state.newBandGenre,
             concertVideoOne: this.state.newConcertVideoOne,
             concertVideoTwo: this.state.newConcertVideoTwo,
-            concertVideoThree: this.state.newConcertVideoThree
+            concertVideoThree: this.state.newConcertVideoThree,
+            bandPhoto: this.state.newBandPhoto
         }
         axios.post('/api/band', newBand)
             .then((res) => {
@@ -69,6 +71,11 @@ export default class AllBands extends Component {
     onNewConcertVideoThreeChange = (evt) => {
         const newConcertVideoThree = evt.target.value;
         this.setState({ newConcertVideoThree: newConcertVideoThree })
+    }
+
+    onNewBandPhotoChange = (evt) => {
+        const newBandPhoto = evt.target.value;
+        this.setState({ newBandPhoto: newBandPhoto })
     }
 
     // Rendered in Browser
@@ -122,6 +129,13 @@ export default class AllBands extends Component {
                         required="required"
                         onChange={this.onBandGenreChange}
                         value={this.state.onBandGenreChange} />
+
+                    <input
+                        type="string"
+                        name="newBandPhoto"
+                        placeholder="Band Photo"
+                        onChange={this.onNewBandPhotoChange}
+                        value={this.state.onNewBandPhotoChange} />
 
                     <input
                         type='string'
