@@ -1,18 +1,34 @@
 .App {
   text-align: center;
-  background-color: grey;
+  background-color: rgb(32, 25, 32);
   font-family: 'McLaren', cursive;
+  color: whitesmoke;
 }
 
 h1 {
   margin: 20px 0px;
-  border: solid 5px black;
   padding: 20px;
 }
 
 .link {
   margin: 20px; 
 }
+
+
+a {
+  text-decoration: none;
+  color: whitesmoke;
+
+}
+
+a:hover {
+  color:rgb(91, 110, 55);
+  font-size: 18px;
+  transition: 0.3s ease;
+  cursor: pointer;
+}
+
+
 
 .home-link {
   padding: 20px;
@@ -21,7 +37,10 @@ h1 {
 nav {
   display:flex;
   justify-content: space-around;
-  padding: 1w0px;
+  padding: 10px;
+  border-bottom: rgb(91, 110, 55) 5px solid;
+  border-left: rgb(91, 110, 55) 5px solid;
+  border-right: rgb(91, 110, 55) 5px solid
 
 }
 
