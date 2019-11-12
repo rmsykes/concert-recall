@@ -83,7 +83,8 @@ export default class OneBand extends Component {
                         />
                     </div>
 
-                    <button onClick={() => this.deleteBand()}>Delete Band</button>
+                    {/* COMMENTED OUT DELETE BUTTON SO THAT IT DOESNT BREAK MY DB */}
+                    {/* <button onClick={() => this.deleteBand()}>Delete Band</button> */}
                 </div>
         )
     }

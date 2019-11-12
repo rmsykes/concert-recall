@@ -63,7 +63,8 @@ export default class OneVenue extends Component {
                     <img src={this.state.venue.venuePhotoTwo} alt="Venue Photo" />
                     <br />
 
-                    <button onClick={() => this.deleteVenue()}>Delete Venue</button>
+                    {/* COMMENTED OUT DELETE BUTTON SO THAT IT DOESNT BREAK MY DB */}
+                    {/* <button onClick={() => this.deleteVenue()}>Delete Venue</button> */}
                 </div>
         )
     }
