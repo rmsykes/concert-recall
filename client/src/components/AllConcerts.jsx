@@ -15,7 +15,9 @@ export default class AllConcerts extends Component {
             description: '',
             bandId: '',
             venueId: '',
-            myConcertVideo: ''
+            myConcertVideoOne: '',
+            myConcertVideoTwo: '',
+            myConcertVideoThree: ''
         },
         bandData: [],
         venueData: []
@@ -121,13 +123,6 @@ export default class AllConcerts extends Component {
                         />
 
 
-                        <input
-                            type="string"
-                            name="myConcertVideo"
-                            placeholder="My Concert Video URL"
-                            onChange={this.handleInputChange}
-                            value={this.state.newConcert.newConcertDate}
-                        />
 
 
                         <select
@@ -156,7 +151,32 @@ export default class AllConcerts extends Component {
 
                         <br />
                         <br />
+                        <input
+                            type="string"
+                            name="myConcertVideoOne"
+                            placeholder="My Concert Video URL"
+                            onChange={this.handleInputChange}
+                            value={this.state.newConcert.newConcertDate}
+                        />
 
+                        <input
+                            type="string"
+                            name="myConcertVideoTwo"
+                            placeholder="My Concert Video URL"
+                            onChange={this.handleInputChange}
+                            value={this.state.newConcert.newConcertDate}
+                        />
+
+                        <input
+                            type="string"
+                            name="myConcertVideoThree"
+                            placeholder="My Concert Video URL"
+                            onChange={this.handleInputChange}
+                            value={this.state.newConcert.newConcertDate}
+                        />
+
+                        <br />
+                        <br/>
 
                         <textarea
                             type="string"

@@ -8,7 +8,9 @@ const ConcertSchema = new mongoose.Schema({
   description: String,
   bandId: mongoose.Types.ObjectId,
   venueId: mongoose.Types.ObjectId,
-  myConcertVideo: String
+  myConcertVideoOne: String,
+  myConcertVideoTwo: String,
+  myConcertVideoThree: String
 })
 
 // CREATE CONCERT API

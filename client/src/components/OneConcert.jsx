@@ -16,7 +16,9 @@ export default class OneConcert extends Component {
             description: '',
             bandId: '',
             venueId: '',
-            myConcertVideo: ''
+            myConcertVideoOne: '',
+            myConcertVideoTwo: '',
+            myConcertVideoThree: ''
         },
         band: {},
         venue: {},
@@ -90,7 +92,19 @@ export default class OneConcert extends Component {
 
                     <div className='videos'>
                         <ReactPlayer
-                            url={this.state.concert.myConcertVideo}
+                            url={this.state.concert.myConcertVideoOne}
+                        />
+                    </div>
+
+                    <div className='videos'>
+                        <ReactPlayer
+                            url={this.state.concert.myConcertVideoTwo}
+                        />
+                    </div>
+
+                    <div className='videos'>
+                        <ReactPlayer
+                            url={this.state.concert.myConcertVideoThree}
                         />
                     </div>
 
