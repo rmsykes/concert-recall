@@ -49,16 +49,19 @@ export default class OneVenue extends Component {
                         <Link to='/venue'><h3>Venues</h3></Link>
                     </nav>
 
-                    <h1>{this.state.venue.venueName}</h1>
+                    <div className='title'>
+                        <h1>{this.state.venue.venueName}</h1>
+                    </div>
+
                     <h2>{this.state.venue.location}</h2>
                     <h2>Capacity: {this.state.venue.capacity}</h2>
-                    <br/>
+                    <br />
 
-                    <img src={this.state.venue.venuePhotoOne} alt="Venue Photo"/>
-                    <br/>
+                    <img src={this.state.venue.venuePhotoOne} alt="Venue Photo" />
+                    <br />
 
-                    <img src={this.state.venue.venuePhotoTwo} alt="Venue Photo"/>
-                    <br/>
+                    <img src={this.state.venue.venuePhotoTwo} alt="Venue Photo" />
+                    <br />
 
                     <button onClick={() => this.deleteVenue()}>Delete Venue</button>
                 </div>

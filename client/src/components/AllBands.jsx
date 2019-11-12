@@ -96,7 +96,10 @@ export default class AllBands extends Component {
                     <Link to='/venue'><h3>Venues</h3></Link>
                 </nav>
 
-                <h1>Bands</h1>
+                <div className='title'>
+                    <h1>Bands</h1>
+                </div>
+
 
                 {listOfBands}
 

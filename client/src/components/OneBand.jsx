@@ -53,7 +53,10 @@ export default class OneBand extends Component {
                         <Link to='/venue'><h3>Venues</h3></Link>
                     </nav>
 
-                    <h1>{this.state.band.bandName}</h1>
+                    <div className='title'>
+                        <h1>{this.state.band.bandName}</h1>
+                    </div>
+
                     <h2>{this.state.band.genre}</h2>
 
 

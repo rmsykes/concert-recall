@@ -94,7 +94,9 @@ export default class AllVenues extends Component {
                     <Link to='/venue'><h3>Venues</h3></Link>
                 </nav>
 
-                <h1>Venues</h1>
+                <div className='title'>
+                    <h1>Venues</h1>
+                </div>
 
                 {listOfVenues}
 
