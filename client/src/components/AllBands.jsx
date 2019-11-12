@@ -87,6 +87,9 @@ export default class AllBands extends Component {
                     <Link to={`/band/${band._id}`}>
                         <div className='link'>
                             <h2>{band.bandName}</h2>
+                            <div className='band-photo'>
+                                <img src={band.bandPhoto} alt="band photo"/>
+                            </div>
                         </div>
                     </Link>
                 </div>

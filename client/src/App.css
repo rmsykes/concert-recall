@@ -81,7 +81,10 @@ img {
   margin-top: 700px;
 }
 
-
+.band-photo img {
+  width: 175px;
+  border-radius: 50%;
+}
 
 
 @keyframes App-logo-spin {
