@@ -95,109 +95,112 @@ export default class AllConcerts extends Component {
                     <Link to='/venue'><h3>Venues</h3></Link>
                 </nav>
 
-                <div className='title'>
-                    <h1>Concerts</h1>
-                </div>
-                
+                <div className='page-body'>
+
+                    <div>
+                        <div className='title'>
+                            <h1>Concerts</h1>
+                        </div>
+
+                        {listOfConcerts}
+
+                    </div>
 
 
-                {listOfConcerts}
+                    <div className='createForm'>
+                        <form id='userform' onSubmit={this.createConcert}>
+                            <h2>Create Concert</h2>
+                            <input
+                                type="string"
+                                name="concertName"
+                                placeholder="Concert Name"
+                                required="required"
+                                onChange={this.handleInputChange}
+                                value={this.state.newConcert.newConcertName}
+                            />
 
-
-                <div className='createForm'>
-                    <form id='userform' onSubmit={this.createConcert}>
-                        <h2>Create Concert</h2>
-                        <input
-                            type="string"
-                            name="concertName"
-                            placeholder="Concert Name"
-                            required="required"
-                            onChange={this.handleInputChange}
-                            value={this.state.newConcert.newConcertName}
-                        />
-
-                        <input
-                            type="string"
-                            name="date"
-                            placeholder="Concert Date"
-                            required="required"
-                            onChange={this.handleInputChange}
-                            value={this.state.newConcert.newConcertDate}
-                        />
+                            <input
+                                type="string"
+                                name="date"
+                                placeholder="Concert Date"
+                                required="required"
+                                onChange={this.handleInputChange}
+                                value={this.state.newConcert.newConcertDate}
+                            />
 
 
 
 
-                        <select
-                            name="bandId"
-                            onChange={this.handleInputChange}
-                            value={this.state.newConcert.bandId}
-                        >
-                            {this.state.bandData.map(
-                                (band) => {
-                                    return <option value={band._id}>{band.bandName}</option>
-                                }
-                            )}
-                        </select>
+                            <select
+                                name="bandId"
+                                onChange={this.handleInputChange}
+                                value={this.state.newConcert.bandId}
+                            >
+                                {this.state.bandData.map(
+                                    (band) => {
+                                        return <option value={band._id}>{band.bandName}</option>
+                                    }
+                                )}
+                            </select>
 
-                        <select
-                            name="venueId"
-                            onChange={this.handleInputChange}
-                            value={this.state.newConcert.venueId}
-                        >
-                            {this.state.venueData.map(
-                                (venue) => {
-                                    return <option value={venue._id}>{venue.venueName}</option>
-                                }
-                            )}
-                        </select>
+                            <select
+                                name="venueId"
+                                onChange={this.handleInputChange}
+                                value={this.state.newConcert.venueId}
+                            >
+                                {this.state.venueData.map(
+                                    (venue) => {
+                                        return <option value={venue._id}>{venue.venueName}</option>
+                                    }
+                                )}
+                            </select>
 
-                        <br />
-                        <br />
-                        <input
-                            type="string"
-                            name="myConcertVideoOne"
-                            placeholder="My Concert Video URL"
-                            onChange={this.handleInputChange}
-                            value={this.state.newConcert.newConcertDate}
-                        />
+                            <br />
+                            <br />
+                            <input
+                                type="string"
+                                name="myConcertVideoOne"
+                                placeholder="My Concert Video URL"
+                                onChange={this.handleInputChange}
+                                value={this.state.newConcert.newConcertDate}
+                            />
 
-                        <input
-                            type="string"
-                            name="myConcertVideoTwo"
-                            placeholder="My Concert Video URL"
-                            onChange={this.handleInputChange}
-                            value={this.state.newConcert.newConcertDate}
-                        />
+                            <input
+                                type="string"
+                                name="myConcertVideoTwo"
+                                placeholder="My Concert Video URL"
+                                onChange={this.handleInputChange}
+                                value={this.state.newConcert.newConcertDate}
+                            />
 
-                        <input
-                            type="string"
-                            name="myConcertVideoThree"
-                            placeholder="My Concert Video URL"
-                            onChange={this.handleInputChange}
-                            value={this.state.newConcert.newConcertDate}
-                        />
+                            <input
+                                type="string"
+                                name="myConcertVideoThree"
+                                placeholder="My Concert Video URL"
+                                onChange={this.handleInputChange}
+                                value={this.state.newConcert.newConcertDate}
+                            />
 
-                        <br />
-                        <br/>
+                            <br />
+                            <br />
 
-                        <textarea
-                            type="string"
-                            name="description"
-                            placeholder="Concert Description: setlist or other information"
-                            cols="98"
-                            rows='5'
-                            form='userform'
-                            onChange={this.handleInputChange}
-                            value={this.state.newConcert.newConcertDescription}
-                        />
+                            <textarea
+                                type="string"
+                                name="description"
+                                placeholder="Concert Description: setlist or other information"
+                                cols="98"
+                                rows='5'
+                                form='userform'
+                                onChange={this.handleInputChange}
+                                value={this.state.newConcert.newConcertDescription}
+                            />
 
-                        <br />
-                        <br />
+                            <br />
+                            <br />
 
-                        <input type="submit" value="Create Concert" />
-                    </form>
-                    {/* <button onClick={() => this.createConcert()}>Create Concert</button> */}
+                            <input type="submit" value="Create Concert" />
+                        </form>
+                    </div>
                 </div>
             </div>
         )

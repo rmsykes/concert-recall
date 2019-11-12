@@ -45,6 +45,13 @@ select {
   padding: 20px;
 }
 
+
+.page-body {
+  display: flex;
+  flex-direction: column;
+
+}
+
 nav {
   display:flex;
   justify-content: space-around;
@@ -67,8 +74,11 @@ img {
 }
 
 .createForm {
-  border: 5px solid black;
+  border-top: rgb(91, 110, 55) 5px solid;
+  border-left: rgb(91, 110, 55) 5px solid;
+  border-right: rgb(91, 110, 55) 5px solid;
   padding-bottom: 30px;
+  margin-top: 700px;
 }
 
 
