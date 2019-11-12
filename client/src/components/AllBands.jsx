@@ -57,7 +57,7 @@ export default class AllBands extends Component {
                 return <div>
                     <Link to={`/band/${band._id}`}>
                         <div className='link'>
-                            {band.bandName}
+                            <h2>{band.bandName}</h2>
                         </div>
                     </Link>
                 </div>
@@ -66,12 +66,12 @@ export default class AllBands extends Component {
 
         return (
             <div>
-                
+
                 <nav>
-                    <Link to='/'>Home</Link>
-                    <Link to='/concert'>Concerts</Link>
-                    <Link to='/band'>Bands</Link>
-                    <Link to='/venue'>Venues</Link>
+                    <Link to='/'><h3>Home</h3></Link>
+                    <Link to='/concert'><h3>Concerts</h3></Link>
+                    <Link to='/band'><h3>Bands</h3></Link>
+                    <Link to='/venue'><h3>Venues</h3></Link>
                 </nav>
 
                 <h1>Bands</h1>

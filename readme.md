@@ -6,7 +6,7 @@
 ## Project Explanation: 
 
 Purpose of project as a problem statement: <br>
-This site/application allows concert goers to document their past live shows they have attended. Also allows music lovers to view past live shows from their favorite bands in one space.
+This site/application allows concert goers to document their past live shows they have attended. Also allows music lovers to view past live shows from their favorite bands in one space. Lastly shows users information on concert venues. 
 
 
 Target end user: <br>

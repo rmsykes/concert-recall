@@ -1,7 +1,7 @@
 // Import React, { Component }, Axios, Link
 import React, { Component } from 'react'
 import axios from 'axios'
-import {Link, Redirect} from 'react-router-dom'
+import { Link, Redirect } from 'react-router-dom'
 
 // Create and Export OneConcert Component
 export default class OneConcert extends Component {
@@ -60,32 +60,32 @@ export default class OneConcert extends Component {
     // Rendered in Browser
     render() {
         const bandName = this.state.band.bandName
-        const venueName = this.state.venue.venueName           
+        const venueName = this.state.venue.venueName
         return (
 
-            this.state.isRedirect ? <Redirect to="/concert" /> : 
+            this.state.isRedirect ? <Redirect to="/concert" /> :
 
-            <div>
-                
-                <nav>
-                    <Link to='/'>Home</Link>
-                    <Link to='/concert'>Concerts</Link>
-                    <Link to='/band'>Bands</Link>
-                    <Link to='/venue'>Venues</Link>
-                </nav>
+                <div>
 
-                <h1>{this.state.concert.concertName}</h1>
+                    <nav>
+                        <Link to='/'><h3>Home</h3></Link>
+                        <Link to='/concert'><h3>Concerts</h3></Link>
+                        <Link to='/band'><h3>Bands</h3></Link>
+                        <Link to='/venue'><h3>Venues</h3></Link>
+                    </nav>
 
-                <h2><Link to={`/band/${this.state.concert.bandId}`}>{bandName}</Link></h2>
-                <h2><Link to={`/venue/${this.state.concert.venueId}`}>{venueName}</Link></h2>
+                    <h1>{this.state.concert.concertName}</h1>
 
-                <h2>{this.state.concert.date}</h2>
-                <p>{this.state.concert.description}</p>
+                    <h2><Link to={`/band/${this.state.concert.bandId}`}>{bandName}</Link></h2>
+                    <h2><Link to={`/venue/${this.state.concert.venueId}`}>{venueName}</Link></h2>
 
-                <button onClick={() => this.deleteConcert()}>Delete This Concert</button>
+                    <h2>{this.state.concert.date}</h2>
+                    <p>{this.state.concert.description}</p>
+
+                    <button onClick={() => this.deleteConcert()}>Delete This Concert</button>
 
 
-            </div>
+                </div>
         )
     }
 }

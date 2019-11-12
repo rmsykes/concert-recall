@@ -74,7 +74,7 @@ export default class AllConcerts extends Component {
                 return <div>
                     <Link to={`/concert/${concertData._id}`}>
                         <div className="link">
-                            {concertData.concertName}
+                            <h2>{concertData.concertName}</h2>
                         </div>
                     </Link>
 
@@ -86,10 +86,10 @@ export default class AllConcerts extends Component {
             <div>
 
                 <nav>
-                    <Link to='/'>Home</Link>
-                    <Link to='/concert'>Concerts</Link>
-                    <Link to='/band'>Bands</Link>
-                    <Link to='/venue'>Venues</Link>
+                    <Link to='/'><h3>Home</h3></Link>
+                    <Link to='/concert'><h3>Concerts</h3></Link>
+                    <Link to='/band'><h3>Bands</h3></Link>
+                    <Link to='/venue'><h3>Venues</h3></Link>
                 </nav>
 
                 <h1>Concerts</h1>
@@ -123,6 +123,7 @@ export default class AllConcerts extends Component {
                             type="string"
                             name="description"
                             placeholder="Concert Description"
+                            
                             onChange={this.handleInputChange}
                             value={this.state.newConcert.newConcertDescription}
                         />

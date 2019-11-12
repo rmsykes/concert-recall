@@ -63,7 +63,7 @@ export default class AllVenues extends Component {
                 return <div>
                     <Link to={`/venue/${venueData._id}`}>
                         <div className='link'>
-                            {venueData.venueName}
+                            <h2>{venueData.venueName}</h2>
                         </div>
                     </Link>
                 </div>
@@ -75,10 +75,10 @@ export default class AllVenues extends Component {
             <div>
 
                 <nav>
-                    <Link to='/'>Home</Link>
-                    <Link to='/concert'>Concerts</Link>
-                    <Link to='/band'>Bands</Link>
-                    <Link to='/venue'>Venues</Link>
+                    <Link to='/'><h3>Home</h3></Link>
+                    <Link to='/concert'><h3>Concerts</h3></Link>
+                    <Link to='/band'><h3>Bands</h3></Link>
+                    <Link to='/venue'><h3>Venues</h3></Link>
                 </nav>
 
                 <h1>Venues</h1>

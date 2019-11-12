@@ -1,7 +1,7 @@
 // Import React, { Component }, and axios
 import React, { Component } from 'react'
 import axios from 'axios'
-import {Redirect, Link} from 'react-router-dom'
+import { Redirect, Link } from 'react-router-dom'
 
 // create and export OneVenue Component
 export default class OneVenue extends Component {
@@ -35,24 +35,24 @@ export default class OneVenue extends Component {
     // Rendered in Browser
     render() {
         return (
-            
+
             this.state.isRedirect ? <Redirect to='/venue' /> :
 
-            <div>
+                <div>
 
-                <nav>
-                    <Link to='/'>Home</Link>
-                    <Link to='/concert'>Concerts</Link>
-                    <Link to='/band'>Bands</Link>
-                    <Link to='/venue'>Venues</Link>
-                </nav>
+                    <nav>
+                        <Link to='/'><h3>Home</h3></Link>
+                        <Link to='/concert'><h3>Concerts</h3></Link>
+                        <Link to='/band'><h3>Bands</h3></Link>
+                        <Link to='/venue'><h3>Venues</h3></Link>
+                    </nav>
 
-                <h1>{this.state.venue.venueName}</h1>
-                <h2>{this.state.venue.location}</h2>
-                <h2>Capacity: {this.state.venue.capacity}</h2>
+                    <h1>{this.state.venue.venueName}</h1>
+                    <h2>{this.state.venue.location}</h2>
+                    <h2>Capacity: {this.state.venue.capacity}</h2>
 
-                <button onClick={() => this.deleteVenue()}>Delete Venue</button>
-            </div>
+                    <button onClick={() => this.deleteVenue()}>Delete Venue</button>
+                </div>
         )
     }
 }
