@@ -7,8 +7,8 @@ const ConcertSchema = new mongoose.Schema({
   date: String,
   description: String,
   bandId: mongoose.Types.ObjectId,
-  venueId: mongoose.Types.ObjectId
-
+  venueId: mongoose.Types.ObjectId,
+  myConcertVideo: String
 })
 
 // CREATE CONCERT API
@@ -21,16 +21,6 @@ const ConcertCollection = mongoose.model('Concert', ConcertSchema)
 const getAllConcerts = () => {
   return ConcertCollection.find()
 }
-
-// // getAllConcertsByBandId()
-// const getAllConcertsByBandId = (bandId) => {
-//   return ConcertCollection.findById({ bandId: bandId })
-// }
-
-// // getAllConcertsByVenueId
-// const getAllConcertsByVenueId = (venueId) => {
-//   return ConcertCollection.findById({ venueId: venueId })
-// }
 
 // getOneConcert()
 const getOneConcert = (concertId) => {
@@ -56,8 +46,6 @@ const deleteConcert = (concertId) => {
 // EXPORT CONCERT CRUD FUNCTIONS
 module.exports = {
   getAllConcerts,
-  // getAllConcertsByBandId,
-  // getAllConcertsByVenueId,
   getOneConcert,
   createConcert,
   updateConcert,

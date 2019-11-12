@@ -8,6 +8,7 @@
 h1 {
   margin: 20px 0px;
   padding: 20px;
+  
 }
 
 .link {
@@ -28,7 +29,13 @@ a:hover {
   cursor: pointer;
 }
 
+input {
+  margin: 0 10px;
+}
 
+select {
+  margin: 0 10px;
+}
 
 .home-link {
   padding: 20px;

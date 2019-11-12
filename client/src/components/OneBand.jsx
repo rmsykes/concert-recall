@@ -56,7 +56,6 @@ export default class OneBand extends Component {
                     <h1>{this.state.band.bandName}</h1>
                     <h2>{this.state.band.genre}</h2>
 
-                    <h2>Featured Concerts</h2>
 
                     <div className='videos'>
                         <ReactPlayer

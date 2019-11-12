@@ -14,7 +14,8 @@ export default class AllConcerts extends Component {
             date: '',
             description: '',
             bandId: '',
-            venueId: ''
+            venueId: '',
+            myConcertVideo: ''
         },
         bandData: [],
         venueData: []
@@ -119,6 +120,14 @@ export default class AllConcerts extends Component {
                             value={this.state.newConcert.newConcertDate}
                         />
 
+
+                        <input
+                            type="string"
+                            name="myConcertVideo"
+                            placeholder="My Concert Video URL"
+                            onChange={this.handleInputChange}
+                            value={this.state.newConcert.newConcertDate}
+                        />
 
 
                         <select
