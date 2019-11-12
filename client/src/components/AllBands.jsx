@@ -89,6 +89,7 @@ export default class AllBands extends Component {
                         onChange={this.onBandNameChange}
                         value={this.state.onBandNameChange}
                     />
+
                     <input
                         type="string"
                         name="newBandGenre"
@@ -96,6 +97,9 @@ export default class AllBands extends Component {
                         required="required"
                         onChange={this.onBandGenreChange}
                         value={this.state.onBandGenreChange} />
+
+                    
+
 
                     <button onClick={() => this.createBand()}>Create Band</button>
                 </div>

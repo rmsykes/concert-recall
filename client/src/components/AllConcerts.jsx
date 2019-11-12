@@ -99,7 +99,7 @@ export default class AllConcerts extends Component {
 
 
                 <div className='createForm'>
-                    <form onSubmit={this.createConcert}>
+                    <form id='userform' onSubmit={this.createConcert}>
                         <h2>Create Concert</h2>
                         <input
                             type="string"
@@ -119,14 +119,7 @@ export default class AllConcerts extends Component {
                             value={this.state.newConcert.newConcertDate}
                         />
 
-                        <input
-                            type="string"
-                            name="description"
-                            placeholder="Concert Description"
-                            
-                            onChange={this.handleInputChange}
-                            value={this.state.newConcert.newConcertDescription}
-                        />
+
 
                         <select
                             name="bandId"
@@ -150,9 +143,25 @@ export default class AllConcerts extends Component {
                                     return <option value={venue._id}>{venue.venueName}</option>
                                 }
                             )}
-
-
                         </select>
+
+                        <br />
+                        <br />
+
+
+                        <textarea
+                            type="string"
+                            name="description"
+                            placeholder="Concert Description: setlist or other information"
+                            cols="98"
+                            rows='5'
+                            form='userform'
+                            onChange={this.handleInputChange}
+                            value={this.state.newConcert.newConcertDescription}
+                        />
+
+                        <br />
+                        <br />
 
                         <input type="submit" value="Create Concert" />
                     </form>
