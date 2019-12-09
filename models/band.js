@@ -10,7 +10,6 @@ const BandSchema = new mongoose.Schema({
   concertVideoTwo: String,
   concertVideoThree: String,
   bandPhoto: String
-
 })
 
 

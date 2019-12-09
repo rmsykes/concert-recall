@@ -5,19 +5,103 @@
   color: whitesmoke;
 }
 
-h1 {
-  margin: 20px 0px;
-  padding: 20px;
-  
+
+
+button {
+  height: 100px;
+  width: 243px;
+  position: relative;
+  /* padding: 10px;
+  padding-left: 60px;
+  padding-right: 60px; */
+  background-color: transparent;
+  outline: none;
+  border: none;
+  color: white;
+  font-size: 20px;
+  overflow: hidden;
 }
+
+button:before {
+  position: absolute;
+  content: '';
+  height: 0;
+  width: 0;
+  border: 8px solid transparent;
+  bottom: 0;
+  left: 0;
+  box-sizing: border-box;
+}
+
+button:after {
+  position: absolute;
+  content: '';
+  height: 0;
+  width: 0;
+  border: 8px solid transparent;
+  top: 0;
+  right: 0;
+  box-sizing: border-box;
+}
+
+button:hover:before {
+  height: 100px;
+  width: 320px;
+  border: 8px solid white;
+  border-right: none;
+  border-bottom: none;
+  transition: height .5s linear,
+              width .5s linear .5s;
+}
+
+button:hover:after {
+  height: 100px;
+  width: 320px;
+  border: 8px solid white;
+  border-left: none;
+  border-top: none;
+  transition: height .5s linear,
+              width .5s linear .5s;
+}
+
 
 .link {
   margin: 20px; 
 }
 
+.homeHeader {
+  display: flex;
+}
+
+.homeHeaderLeft {
+  width: 25%;
+  background-color: black;
+
+}
+
+.homeHeaderRight {
+  width: 75%;
+  margin-left: -100px;
+}
+
+
+.homeHeaderPhoto img {
+  width: 100%;
+}
+
+.homeHeaderDescription {
+  font-size: 2.5em;
+  margin-top: -552px;
+  margin-bottom: 453px;
+  margin-left: -100px;
+  text-align: left;
+
+
+}
+
 .title {
   font-size: 1.5em;
-  
+  margin: 28px;
 }
 
 a {
@@ -26,9 +110,16 @@ a {
 
 }
 
+nav a:hover {
+  color:rgb(32, 25, 32);
+  /* font-size: 18px; */
+  transition: 0.3s ease;
+  cursor: pointer;
+}
+
 a:hover {
   color:rgb(91, 110, 55);
-  font-size: 18px;
+  /* font-size: 18px; */
   transition: 0.3s ease;
   cursor: pointer;
 }
@@ -53,13 +144,16 @@ select {
 }
 
 nav {
+  background-color: rgb(91, 110, 55);
   display:flex;
   justify-content: space-around;
-  padding: 10px;
+  padding: 10px 0 15px 0;
   border-bottom: rgb(91, 110, 55) 5px solid;
   border-left: rgb(91, 110, 55) 5px solid;
-  border-right: rgb(91, 110, 55) 5px solid
-
+  border-right: rgb(91, 110, 55) 5px solid;
+  margin-left: 100px;
+  height: 10vh;
+  
 }
 
 .videos {
