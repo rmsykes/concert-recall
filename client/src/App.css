@@ -99,6 +99,7 @@ button:hover:after {
 
 .homeHeaderPhoto img {
   width: 100%;
+  height: 85vh;
 }
 
 .homeHeaderDescription {

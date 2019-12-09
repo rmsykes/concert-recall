@@ -105,9 +105,9 @@ export default class AllVenues extends Component {
                         </nav>
 
                         <div className='homeHeaderPhoto'>
-                            <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.goodfreephotos.com%2Falbums%2Fpeople%2Fcrowd-and-lights-at-a-concert.jpg&f=1&nofb=1" alt="concert photo" />
+                            <img src="https://images.unsplash.com/photo-1561114601-81d07393ee3d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2689&q=80" alt="concert photo" />
                         </div>
-                        <h2 className='homeHeaderDescription'>Watch concerts by your favorite band. <br /> Document your past live shows.</h2>
+                        <h2 className='homeHeaderDescription'>Information On Music Venues</h2>
                     </div>
 
 

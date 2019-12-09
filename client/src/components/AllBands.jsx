@@ -88,7 +88,7 @@ export default class AllBands extends Component {
                         <div className='link'>
                             <h2>{band.bandName}</h2>
                             <div className='band-photo'>
-                                <img src={band.bandPhoto} alt="band photo"/>
+                                <img src={band.bandPhoto} alt="band photo" />
                             </div>
                         </div>
                     </Link>
@@ -99,12 +99,27 @@ export default class AllBands extends Component {
         return (
             <div>
 
-                <nav>
-                    <Link to='/'><h3>Home</h3></Link>
-                    <Link to='/concert'><h3>Concerts</h3></Link>
-                    <Link to='/band'><h3>Bands</h3></Link>
-                    <Link to='/venue'><h3>Venues</h3></Link>
-                </nav>
+                <div className='homeHeader'>
+                    <div className='homeHeaderLeft'>
+                        <h1 className='title'>Concert Recall <br/> Bands</h1>
+                    </div>
+
+                    <div className='homeHeaderRight'>
+                        <nav>
+                            <Link to='/'><button>Home</button></Link>
+                            <Link to='/concert'><button>My Concerts</button></Link>
+                            <Link to='/band'><button>Bands</button></Link>
+                            <Link to='/venue'><button>Venues</button></Link>
+                        </nav>
+
+                        <div className='homeHeaderPhoto'>
+                            <img src="https://images.unsplash.com/photo-1499364615650-ec38552f4f34?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1932&q=80" alt="concert photo" />
+                        </div>
+                        <h2 className='homeHeaderDescription'>Recorded Shows By Your Favorite Bands</h2>
+                    </div>
+
+
+                </div>
 
                 <div className='title'>
                     <h1>Bands</h1>
