@@ -263,8 +263,9 @@ select {
 
 .myConcertListItem {
   background: black;
-  margin: 0 auto;
-  width: 335px;
+  margin: 50px 500px;
+  display: flex;
+  justify-content: center;
   padding: 6px;
 }
 
