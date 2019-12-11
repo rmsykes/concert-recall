@@ -90,7 +90,7 @@ export default class OneConcert extends Component {
                         <div className='homeHeaderRight'>
 
                             <div className='homeHeaderPhoto'>
-                                <img src="https://images.unsplash.com/photo-1466584820433-9ad1cc6798f3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2255&q=80" alt="concert photo" />
+                                <img src="https://images.unsplash.com/photo-1569982175971-d92b01cf8694?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=975&q=80" alt="concert photo" />
                             </div>
                         </div>
 

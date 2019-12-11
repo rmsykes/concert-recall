@@ -73,10 +73,12 @@ export default class AllVenues extends Component {
 
         const listOfVenues = this.state.venueData.map(
             (venueData) => {
-                return <div>
+                return <div className='venueListName'>
                     <Link to={`/venue/${venueData._id}`}>
-                        <div className='link'>
+                        <div>
                             <h2>{venueData.venueName}</h2>
+                            <p>{venueData.location}</p>
+                            <img className='venueListImage' src={venueData.venuePhotoOne} alt="venue photo"/>
                         </div>
                     </Link>
                 </div>
@@ -118,9 +120,10 @@ export default class AllVenues extends Component {
                     </div>
                 </div>
 
+                <div className='listOfVenuesContainer'>
+                    {listOfVenues}
+                </div>
 
-
-                {listOfVenues}
 
                 <div className='createForm'>
                     <h2>Create Venue</h2>

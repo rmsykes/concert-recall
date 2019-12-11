@@ -42,26 +42,48 @@ export default class OneVenue extends Component {
 
                 <div>
 
-                    <nav>
-                        <Link to='/'><h3>Home</h3></Link>
-                        <Link to='/concert'><h3>Concerts</h3></Link>
-                        <Link to='/band'><h3>Bands</h3></Link>
-                        <Link to='/venue'><h3>Venues</h3></Link>
-                    </nav>
-
-                    <div className='title'>
-                        <h1>{this.state.venue.venueName}</h1>
+                    <div className='navBar'>
+                        <h1 className='title' className='titleNotHomePage'>Concert Recall <br /> Venues</h1>
+                        <nav>
+                            <Link to='/'><button>Home</button></Link>
+                            <Link to='/concert'><button>My Shows</button></Link>
+                            <Link to='/band'><button>Bands</button></Link>
+                            <Link to='/venue'><button>Venues</button></Link>
+                        </nav>
                     </div>
 
-                    <h2>{this.state.venue.location}</h2>
-                    <h2>Capacity: {this.state.venue.capacity}</h2>
-                    <br />
+                    <div className='homeHeader'>
+                        <div className='homeHeaderLeft'>
+                        </div>
 
-                    <img src={this.state.venue.venuePhotoOne} alt="Venue Photo" />
-                    <br />
+                        <div className='homeHeaderRight'>
 
-                    <img src={this.state.venue.venuePhotoTwo} alt="Venue Photo" />
-                    <br />
+                            <div className='homeHeaderPhoto'>
+                                <img src="https://images.unsplash.com/photo-1569982175971-d92b01cf8694?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=975&q=80" alt="concert photo" />
+                            </div>
+                        </div>
+                    </div>
+
+                    <div className='oneVenueInfo'>
+                        <div className='oneVenueInfoTop'>
+                            <div className='oneVenueTitle'>
+                                <h1>{this.state.venue.venueName}</h1>
+                            </div>
+
+                            <h2>{this.state.venue.location}</h2>
+                            <h2>Capacity: {this.state.venue.capacity}</h2>
+                        </div>
+
+                        <div className='oneVenueInfoBottom'>
+                            <img src={this.state.venue.venuePhotoOne} alt="Venue Photo" />
+                        
+                            <img src={this.state.venue.venuePhotoTwo} alt="Venue Photo" />
+                        </div>
+
+                        
+                    </div>
+
+
 
                     {/* COMMENTED OUT DELETE BUTTON SO THAT IT DOESNT BREAK MY DB */}
                     {/* <button onClick={() => this.deleteVenue()}>Delete Venue</button> */}

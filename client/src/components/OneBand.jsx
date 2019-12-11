@@ -64,7 +64,7 @@ export default class OneBand extends Component {
                         <div className='homeHeaderRight'>
 
                             <div className='homeHeaderPhoto'>
-                                <img src="https://images.unsplash.com/photo-1557682224-5b8590cd9ec5?ixlib=rb-1.2.1&auto=format&fit=crop&w=2030&q=80" alt="concert photo" />
+                                <img src="https://images.unsplash.com/photo-1569982175971-d92b01cf8694?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=975&q=80" alt="concert photo" />
                             </div>
                         </div>
 

@@ -163,10 +163,48 @@ button:hover:after {
   padding: 15px 40px 0 40px;
 }
 
+.oneVenueInfoTop {
+  margin: 20px auto
+}
+
+.oneVenueInfoBottom {
+  display:flex;
+  justify-content: space-around;
+  margin: 0 auto;
+  width: 925px;
+  padding-top: 45px;
+}
+
+.oneVenueInfoBottom img {
+  border-radius: 25px;
+}
+
+
+.oneVenueInfo {
+  margin:-780px 0 0 105px;
+  padding-bottom: 200px;
+}
+
+.oneVenueTitle {
+  font-size: 1.5em;
+}
+
+.listOfVenuesContainer {
+  margin:45px 0;
+}
+
+.venueListName {
+  margin:20px;
+}
+
 .myConcertBody {
   margin: -715px 0 360px 120px;
 }
 
+.venueListImage {
+  border-radius: 25px;
+  width:300px;
+}
 .myVideosContainer h2 {
   font-size: 3em;
   border: 5px solid black;
