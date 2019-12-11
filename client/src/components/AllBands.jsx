@@ -129,14 +129,15 @@ export default class AllBands extends Component {
 
 
                 <div className='pageBody'>
-                    <div className='title'>
+                    <div className='bodyTitle'>
                         <h1>Bands</h1>
                     </div>
                 </div>
 
+                <div className='listOfBandsContainer'>
+                    {listOfBands}
+                </div>
 
-
-                {listOfBands}
 
                 <div className='createForm'>
                     <h2>Create Band</h2>

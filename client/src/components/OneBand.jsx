@@ -46,42 +46,66 @@ export default class OneBand extends Component {
 
                 <div>
 
-                    <nav>
-                        <Link to='/'><h3>Home</h3></Link>
-                        <Link to='/concert'><h3>Concerts</h3></Link>
-                        <Link to='/band'><h3>Bands</h3></Link>
-                        <Link to='/venue'><h3>Venues</h3></Link>
-                    </nav>
-
-                    <div className='title'>
-                        <h1>{this.state.band.bandName}</h1>
+                    <div className='navBar'>
+                        <h1 className='title' className='titleNotHomePage'>Concert Recall <br /> Bands</h1>
+                        <nav>
+                            <Link to='/'><button>Home</button></Link>
+                            <Link to='/concert'><button>My Shows</button></Link>
+                            <Link to='/band'><button>Bands</button></Link>
+                            <Link to='/venue'><button>Venues</button></Link>
+                        </nav>
                     </div>
 
-                    <div>
-                    <img src={this.state.band.bandPhoto} alt="Band Photo"/>
+
+                    <div className='homeHeader'>
+                        <div className='homeHeaderLeft'>
+                        </div>
+
+                        <div className='homeHeaderRight'>
+
+                            <div className='homeHeaderPhoto'>
+                                <img src="https://images.unsplash.com/photo-1557682224-5b8590cd9ec5?ixlib=rb-1.2.1&auto=format&fit=crop&w=2030&q=80" alt="concert photo" />
+                            </div>
+                        </div>
 
                     </div>
 
-                    <h2>{this.state.band.genre}</h2>
+                    <div className='oneBandInfo'>
+                        <div className='oneBandTitle'>
+                            <h1>{this.state.band.bandName}</h1>
+                        </div>
 
+                        <div>
+                            <img src={this.state.band.bandPhoto} alt="Band Photo" />
 
-                    <div className='videos'>
-                        <ReactPlayer
-                            url={this.state.band.concertVideoOne}
-                        />
+                        </div>
+
+                        <h2>{this.state.band.genre}</h2>
                     </div>
 
-                    <div className='videos'>
-                        <ReactPlayer
-                            url={this.state.band.concertVideoTwo}
-                        />
+                    <div className='oneBandVideosList'>
+                        <h2>Featured Shows and Videos</h2>
+                        <div className='videos'>
+                            <ReactPlayer
+                                url={this.state.band.concertVideoOne}
+                            />
+                        </div>
+
+                        <div className='videos'>
+                            <ReactPlayer
+                                url={this.state.band.concertVideoTwo}
+                            />
+                        </div>
+
+                        <div className='videos'>
+                            <ReactPlayer
+                                url={this.state.band.concertVideoThree}
+                            />
+                        </div>
                     </div>
 
-                    <div className='videos'>
-                        <ReactPlayer
-                            url={this.state.band.concertVideoThree}
-                        />
-                    </div>
+
+
 
                     {/* COMMENTED OUT DELETE BUTTON SO THAT IT DOESNT BREAK MY DB */}
                     {/* <button onClick={() => this.deleteBand()}>Delete Band</button> */}

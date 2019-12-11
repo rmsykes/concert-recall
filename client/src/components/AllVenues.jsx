@@ -113,7 +113,7 @@ export default class AllVenues extends Component {
                 </div>
 
                 <div className='pageBody'>
-                    <div className='title'>
+                    <div className='bodyTitle'>
                         <h1>Venues</h1>
                     </div>
                 </div>

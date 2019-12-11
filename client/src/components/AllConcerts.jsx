@@ -74,7 +74,7 @@ export default class AllConcerts extends Component {
 
         const listOfConcerts = this.state.concertData.map(
             (concertData) => {
-                return <div>
+                return <div className='myConcertListItem'>
                     <Link to={`/concert/${concertData._id}`}>
                         <div className="link">
                             <h2>{concertData.concertName}</h2>
@@ -107,7 +107,7 @@ export default class AllConcerts extends Component {
                     <div className='homeHeaderRight'>
 
                         <div className='homeHeaderPhoto'>
-                            <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.goodfreephotos.com%2Falbums%2Fpeople%2Fcrowd-and-lights-at-a-concert.jpg&f=1&nofb=1" alt="concert photo" />
+                            <img src="https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?ixlib=rb-1.2.1&auto=format&fit=crop&w=2250&q=80" alt="concert photo" />
                         </div>
                     </div>
 
@@ -119,11 +119,15 @@ export default class AllConcerts extends Component {
                 <div className='pageBody'>
 
                     <div>
-                        <div className='title'>
-                            <h1>Concerts</h1>
+                        <div className='bodyTitle'>
+                            <h1>My Shows</h1>
                         </div>
 
-                        {listOfConcerts}
+                        <div className='myFullConcertList'>
+                            {listOfConcerts}
+
+                        </div>
+
 
                     </div>
 

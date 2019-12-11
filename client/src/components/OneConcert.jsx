@@ -72,52 +72,74 @@ export default class OneConcert extends Component {
 
                 <div>
 
-                    <nav>
-                        <Link to='/'><h3>Home</h3></Link>
-                        <Link to='/concert'><h3>Concerts</h3></Link>
-                        <Link to='/band'><h3>Bands</h3></Link>
-                        <Link to='/venue'><h3>Venues</h3></Link>
-                    </nav>
-
-                    <div className='title'>
-                        <h1>{this.state.concert.concertName}</h1>
-                    </div>
-                    
-
-
-                    <Link to={`/band/${this.state.concert.bandId}`}><h2>{bandName}</h2></Link>
-                    <Link to={`/venue/${this.state.concert.venueId}`}><h2>{venueName}</h2></Link>
-
-                    <br/>
-                    <h2>{this.state.concert.date}</h2>
-
-                    <br/>
-                    <h2>Show Description:</h2>
-                    <h3>{this.state.concert.description}</h3>
-
-                    <br/>
-
-                    <h2>Videos from the Show:</h2>
-
-                    <div className='videos'>
-                        <ReactPlayer
-                            url={this.state.concert.myConcertVideoOne}
-                        />
+                    <div className='navBar'>
+                        <h1 className='title' className='titleNotHomePage'>Concert Recall <br /> My Shows</h1>
+                        <nav>
+                            <Link to='/'><button>Home</button></Link>
+                            <Link to='/concert'><button>My Shows</button></Link>
+                            <Link to='/band'><button>Bands</button></Link>
+                            <Link to='/venue'><button>Venues</button></Link>
+                        </nav>
                     </div>
 
-                    <div className='videos'>
-                        <ReactPlayer
-                            url={this.state.concert.myConcertVideoTwo}
-                        />
+
+                    <div className='homeHeader'>
+                        <div className='homeHeaderLeft'>
+                        </div>
+
+                        <div className='homeHeaderRight'>
+
+                            <div className='homeHeaderPhoto'>
+                                <img src="https://images.unsplash.com/photo-1466584820433-9ad1cc6798f3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2255&q=80" alt="concert photo" />
+                            </div>
+                        </div>
+
                     </div>
 
-                    <div className='videos'>
-                        <ReactPlayer
-                            url={this.state.concert.myConcertVideoThree}
-                        />
+                    <div className='myConcertBody'>
+                        <div className='myConcertTitle'>
+                            <h1>{this.state.concert.concertName}</h1>
+                        </div>
+
+
+
+                        <Link to={`/band/${this.state.concert.bandId}`}><h2>{bandName}</h2></Link>
+                        <Link to={`/venue/${this.state.concert.venueId}`}><h2>{venueName}</h2></Link>
+
+                        <br />
+                        <h2>{this.state.concert.date}</h2>
+
+                        <br />
+                        <h2>Show Description:</h2>
+                        <h3>{this.state.concert.description}</h3>
+
                     </div>
 
-                    <button onClick={() => this.deleteConcert()}>Delete This Concert</button>
+                    <div className='myVideosContainer'>
+                        
+                        <h2>Videos from the Show:</h2>
+
+                        <div className='videos'>
+                            <ReactPlayer
+                                url={this.state.concert.myConcertVideoOne}
+                            />
+                        </div>
+
+                        <div className='videos'>
+                            <ReactPlayer
+                                url={this.state.concert.myConcertVideoTwo}
+                            />
+                        </div>
+
+                        <div className='videos'>
+                            <ReactPlayer
+                                url={this.state.concert.myConcertVideoThree}
+                            />
+                        </div>
+                    </div>
+
+
+                    <button id='deleteConcertButton' onClick={() => this.deleteConcert()}>Delete This Concert</button>
 
 
                 </div>
