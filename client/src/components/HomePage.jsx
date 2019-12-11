@@ -23,18 +23,21 @@ export default class HomePage extends Component {
     render() {
         return (
             <div>
+                <div className='navBar'>
+                    <h1 className='title'>Concert Recall</h1>
+                    <nav>
+                        <Link to='/'><button>Home</button></Link>
+                        <Link to='/concert'><button>My Shows</button></Link>
+                        <Link to='/band'><button>Bands</button></Link>
+                        <Link to='/venue'><button>Venues</button></Link>
+                    </nav>
+                </div>
+
                 <div className='homeHeader'>
                     <div className='homeHeaderLeft'>
-                        <h1 className='title'>Concert Recall</h1>
                     </div>
 
                     <div className='homeHeaderRight'>
-                        <nav>
-                            <Link to='/'><button>Home</button></Link>
-                            <Link to='/concert'><button>My Concerts</button></Link>
-                            <Link to='/band'><button>Bands</button></Link>
-                            <Link to='/venue'><button>Venues</button></Link>
-                        </nav>
 
                         <div className='homeHeaderPhoto'>
                             <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.goodfreephotos.com%2Falbums%2Fpeople%2Fcrowd-and-lights-at-a-concert.jpg&f=1&nofb=1" alt="concert photo" />

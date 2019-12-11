@@ -98,18 +98,22 @@ export default class AllBands extends Component {
 
         return (
             <div>
+                <div className='navBar'>
+                    <h1 className='title' className='titleNotHomePage'>Concert Recall <br /> Bands</h1>
+                    <nav>
+                        <Link to='/'><button>Home</button></Link>
+                        <Link to='/concert'><button>My Shows</button></Link>
+                        <Link to='/band'><button>Bands</button></Link>
+                        <Link to='/venue'><button>Venues</button></Link>
+                    </nav>
+                </div>
+
+
                 <div className='homeHeader'>
                     <div className='homeHeaderLeft'>
-                        <h1 className='title'>Concert Recall <br/> Bands</h1>
                     </div>
 
                     <div className='homeHeaderRight'>
-                        <nav>
-                            <Link to='/'><button>Home</button></Link>
-                            <Link to='/concert'><button>My Concerts</button></Link>
-                            <Link to='/band'><button>Bands</button></Link>
-                            <Link to='/venue'><button>Venues</button></Link>
-                        </nav>
 
                         <div className='homeHeaderPhoto'>
                             <img src="https://images.unsplash.com/photo-1499364615650-ec38552f4f34?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1932&q=80" alt="concert photo" />
@@ -123,7 +127,7 @@ export default class AllBands extends Component {
 
 
 
-        
+
                 <div className='pageBody'>
                     <div className='title'>
                         <h1>Bands</h1>

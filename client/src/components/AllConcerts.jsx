@@ -78,6 +78,8 @@ export default class AllConcerts extends Component {
                     <Link to={`/concert/${concertData._id}`}>
                         <div className="link">
                             <h2>{concertData.concertName}</h2>
+                            <h2>{concertData.date}</h2>
+
                         </div>
                     </Link>
 
@@ -87,19 +89,22 @@ export default class AllConcerts extends Component {
 
         return (
             <div>
+                <div className='navBar'>
+                    <h1 className='title' className='titleNotHomePage'>Concert Recall <br /> My Shows</h1>
+                    <nav>
+                        <Link to='/'><button>Home</button></Link>
+                        <Link to='/concert'><button>My Shows</button></Link>
+                        <Link to='/band'><button>Bands</button></Link>
+                        <Link to='/venue'><button>Venues</button></Link>
+                    </nav>
+                </div>
+
 
                 <div className='homeHeader'>
                     <div className='homeHeaderLeft'>
-                        <h1 className='title'>Concert Recall <br/> My Concerts</h1>
                     </div>
 
                     <div className='homeHeaderRight'>
-                        <nav>
-                            <Link to='/'><button>Home</button></Link>
-                            <Link to='/concert'><button>My Concerts</button></Link>
-                            <Link to='/band'><button>Bands</button></Link>
-                            <Link to='/venue'><button>Venues</button></Link>
-                        </nav>
 
                         <div className='homeHeaderPhoto'>
                             <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.goodfreephotos.com%2Falbums%2Fpeople%2Fcrowd-and-lights-at-a-concert.jpg&f=1&nofb=1" alt="concert photo" />
