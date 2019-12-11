@@ -93,7 +93,7 @@ export default class AllVenues extends Component {
 
                 <div className='homeHeader'>
                     <div className='homeHeaderLeft'>
-                        <h1 className='title'>Concert Recall <br/> Venues</h1>
+                        <h1 className='title'>Concert Recall <br /> Venues</h1>
                     </div>
 
                     <div className='homeHeaderRight'>
@@ -107,25 +107,20 @@ export default class AllVenues extends Component {
                         <div className='homeHeaderPhoto'>
                             <img src="https://images.unsplash.com/photo-1561114601-81d07393ee3d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2689&q=80" alt="concert photo" />
                         </div>
-                        <h2 className='homeHeaderDescription'>Information On Music Venues</h2>
                     </div>
 
+                </div>
+                <div className='headerDescription'>
+                    <h2>Info On Your Favorite Venues</h2>
+                </div>
 
+                <div className='pageBody'>
+                    <div className='title'>
+                        <h1>Venues</h1>
+                    </div>
                 </div>
 
 
-
-
-                {/* <nav>
-                    <Link to='/'><h3>Home</h3></Link>
-                    <Link to='/concert'><h3>Concerts</h3></Link>
-                    <Link to='/band'><h3>Bands</h3></Link>
-                    <Link to='/venue'><h3>Venues</h3></Link>
-                </nav> */}
-
-                <div className='title'>
-                    <h1>Venues</h1>
-                </div>
 
                 {listOfVenues}
 

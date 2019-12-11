@@ -90,7 +90,7 @@ export default class AllConcerts extends Component {
 
                 <div className='homeHeader'>
                     <div className='homeHeaderLeft'>
-                        <h1 className='title'>Concert Recall <br />My Concerts</h1>
+                        <h1 className='title'>Concert Recall <br/> My Concerts</h1>
                     </div>
 
                     <div className='homeHeaderRight'>
@@ -104,13 +104,14 @@ export default class AllConcerts extends Component {
                         <div className='homeHeaderPhoto'>
                             <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.goodfreephotos.com%2Falbums%2Fpeople%2Fcrowd-and-lights-at-a-concert.jpg&f=1&nofb=1" alt="concert photo" />
                         </div>
-                        <h2 className='homeHeaderDescription'>My Concerts</h2>
                     </div>
 
-
+                </div>
+                <div className='headerDescription'>
+                    <h2>My Past Live Shows</h2>
                 </div>
 
-                <div className='page-body'>
+                <div className='pageBody'>
 
                     <div>
                         <div className='title'>

@@ -35,19 +35,19 @@ export default class HomePage extends Component {
                             <Link to='/band'><button>Bands</button></Link>
                             <Link to='/venue'><button>Venues</button></Link>
                         </nav>
-                        
+
                         <div className='homeHeaderPhoto'>
                             <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.goodfreephotos.com%2Falbums%2Fpeople%2Fcrowd-and-lights-at-a-concert.jpg&f=1&nofb=1" alt="concert photo" />
                         </div>
-                        <h2 className='homeHeaderDescription'>Watch concerts by your favorite band. <br/> Document your past live shows.</h2>
                     </div>
 
-
+                </div>
+                <div className='headerDescription'>
+                    <h2>Watch Concerts By Your Favorite Bands. <br /> Document Your Past Live Shows.</h2>
                 </div>
 
 
-
-                <div>
+                <div className='homeBody'>
                     <div className='home-link'>
                         <Link to={'/concert'} ><h3>My Concerts</h3><img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.goodfreephotos.com%2Falbums%2Fpeople%2Fcrowd-and-lights-at-a-concert.jpg&f=1&nofb=1" alt="concert photo" /></Link>
                     </div>
