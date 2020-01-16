@@ -18,10 +18,7 @@ const BandSchema = new mongoose.Schema({
 const BandCollection = mongoose.model('Band', BandSchema)
 
 
-
-
 // CRUD FUNCIONS
-
 const getAllBands = () => {
   return BandCollection.find()
 }

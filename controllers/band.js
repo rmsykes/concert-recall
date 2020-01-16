@@ -8,7 +8,6 @@ const bandApi = require('../models/band.js')
 const bandRouter = express.Router()
 
 
-
 // REQUEST HANDLERS
 
 // getAllCreatures()

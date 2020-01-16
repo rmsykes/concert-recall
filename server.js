@@ -34,11 +34,7 @@ app.use(express.json())
 app.use(express.static(`${__dirname}/client/build`))
 
 
-/* Step 4
- *
- * add router for the application to use. The first argument is a prefix to all
- * the paths defined in the router.
- */
+// ADD ROUTERS
 app.use('/api/band', bandRouter)
 app.use('/api/venue', venueRouter)
 app.use('/api/concert', concertRouter)
