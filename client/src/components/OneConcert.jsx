@@ -82,8 +82,31 @@ export default class OneConcert extends Component {
                         </nav>
                     </div>
 
+                    <div className='header'>
+                        <div className='headerLeft'>
+                            {/* blank black space left of header */}
+                        </div>
+                        <div className='headerRight' id='oneConcertHeaderPhoto'>
+                            <div className='oneConcertInfo'>
+                                <div className='oneConcertTitle'>
+                                    <h2>{this.state.concert.concertName}</h2>
+                                </div>
 
-                    <div className='homeHeader'>
+                                <Link to={`/band/${this.state.concert.bandId}`}><h2>{bandName}</h2></Link>
+                                <Link to={`/venue/${this.state.concert.venueId}`}><h2>{venueName}</h2></Link>
+
+                                <br />
+                                <h3>{this.state.concert.date}</h3>
+
+                                <br />
+                                <h2>Show Description:</h2>
+                                <h3>{this.state.concert.description}</h3>
+
+                            </div>
+                        </div>
+                    </div>
+
+                    {/* <div className='homeHeader'>
                         <div className='homeHeaderLeft'>
                         </div>
 
@@ -94,14 +117,12 @@ export default class OneConcert extends Component {
                             </div>
                         </div>
 
-                    </div>
+                    </div> */}
 
-                    <div className='myConcertBody'>
+                    {/* <div className='myConcertBody'>
                         <div className='myConcertTitle'>
                             <h1>{this.state.concert.concertName}</h1>
                         </div>
-
-
 
                         <Link to={`/band/${this.state.concert.bandId}`}><h2>{bandName}</h2></Link>
                         <Link to={`/venue/${this.state.concert.venueId}`}><h2>{venueName}</h2></Link>
@@ -113,10 +134,10 @@ export default class OneConcert extends Component {
                         <h2>Show Description:</h2>
                         <h3>{this.state.concert.description}</h3>
 
-                    </div>
+                    </div> */}
 
                     <div className='myVideosContainer'>
-                        
+
                         <h2>Videos from the Show:</h2>
 
                         <div className='videos'>

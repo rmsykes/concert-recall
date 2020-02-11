@@ -1,11 +1,38 @@
+/* universal */
+
+.navBar {
+  display: flex;
+  background-color: black;
+  position: sticky;
+  top: 0;
+}
+
+nav a:hover {
+  color:rgb(32, 25, 32);
+  /* font-size: 18px; */
+  transition: 0.3s ease;
+  cursor: pointer;
+}
+
+a {
+  text-decoration: underline;
+  color: whitesmoke;
+
+}
+
+a:hover {
+  color:rgb(91, 110, 55);
+  /* font-size: 18px; */
+  transition: 0.3s ease;
+  cursor: pointer;
+}
+
 .App {
   text-align: center;
   background-color: rgb(32, 25, 32);
   font-family: 'McLaren', cursive;
   color: whitesmoke;
 }
-
-
 
 button {
   height: 100px;
@@ -77,56 +104,76 @@ button:hover:after {
 }
 
 
-
-.link {
-  margin: 20px; 
+/* header css */
+#homeHeaderPhoto {
+  background-image: url(https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.goodfreephotos.com%2Falbums%2Fpeople%2Fcrowd-and-lights-at-a-concert.jpg&f=1&nofb=1);
+  background-size: cover;
 }
 
-.homeHeader {
+#allConcertsHeaderPhoto {
+  background-image: url(https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?ixlib=rb-1.2.1&auto=format&fit=crop&w=2250&q=80);
+  background-size: cover;
+}
+
+
+.header {
   display: flex;
 }
 
-.homeHeaderLeft {
+.headerLeft {
   width: 20%;
   background-color: black;
 
 }
 
-.homeHeaderRight {
+.headerRight {
   width: 80%;
-  margin-left: -80px;
+  height: 600px;
 }
 
-.homeHeaderPhoto {
-  z-index: -1;
-}
-
-.homeHeaderPhoto img {
-  width: 100%;
-  height: 85vh;
-  border-radius: 25px;
-}
-
-.headerDescription {
-  font-size: 2em;
-  margin: -660px 0 0 155px;
+.headerRight h1 {
+  font-size: 34px;
+  margin: 105px 0 0 -40px;
   text-align: left;
 }
 
-.homeBody {
-  margin-top: 500px;
+
+/* oneConcert */
+#oneConcertHeaderPhoto {
+  background-image: url(https://images.unsplash.com/photo-1569982175971-d92b01cf8694?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=975&q=80);
+  background-size: cover;
 }
 
-.navBar {
-  display: flex;
-  background-color: black;
-  position: sticky;
-  top: 0;
+.oneConcertInfo {
 }
 
-.myConcertTitle {
+.oneConcertTitle {
   font-size: 1.5em;
 }
+
+.homeBody {
+  display: flex;
+  flex-direction: column;
+}
+
+.homeLink {
+  margin: 0 200px;
+}
+
+.homeLink p:hover {
+  box-shadow: 0px 0px 30px rgb(91, 110, 55);
+  background-color: rgb(91, 110, 55);
+  color:whitesmoke;
+  transition: .8s;
+}
+
+.link {
+  margin: 20px; 
+}
+
+
+
+
 
 .oneBandTitle {
   font-size: 1.5em;
@@ -197,9 +244,7 @@ button:hover:after {
   margin:20px;
 }
 
-.myConcertBody {
-  margin: -715px 0 360px 120px;
-}
+
 
 .venueListImage {
   border-radius: 25px;
@@ -229,25 +274,7 @@ button:hover:after {
 }
 
 
-a {
-  text-decoration: underline;
-  color: whitesmoke;
 
-}
-
-nav a:hover {
-  color:rgb(32, 25, 32);
-  /* font-size: 18px; */
-  transition: 0.3s ease;
-  cursor: pointer;
-}
-
-a:hover {
-  color:rgb(91, 110, 55);
-  /* font-size: 18px; */
-  transition: 0.3s ease;
-  cursor: pointer;
-}
 
 input {
   margin: 0 10px;
@@ -257,9 +284,7 @@ select {
   margin: 0 10px;
 }
 
-.home-link {
-  padding: 20px;
-}
+
 
 .myConcertListItem {
   background: black;

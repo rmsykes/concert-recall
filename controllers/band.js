@@ -10,7 +10,7 @@ const bandRouter = express.Router()
 
 // REQUEST HANDLERS
 
-// getAllCreatures()
+// getAllBands()
 bandRouter.get('/', (req, res) => {
   bandApi.getAllBands()
   .then((bands) => {
@@ -18,7 +18,7 @@ bandRouter.get('/', (req, res) => {
   })
 })
 
-// getOneCreature()
+// getOneBand()
 bandRouter.get('/:bandId', (req, res) => {
   bandApi.getOneBand(req.params.bandId)
   .then((oneBand) => {

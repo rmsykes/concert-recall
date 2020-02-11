@@ -100,20 +100,13 @@ export default class AllConcerts extends Component {
                 </div>
 
 
-                <div className='homeHeader'>
-                    <div className='homeHeaderLeft'>
+                <div className='header'>
+                    <div className='headerLeft'>
+                        {/* blank black space left of header */}
                     </div>
-
-                    <div className='homeHeaderRight'>
-
-                        <div className='homeHeaderPhoto'>
-                            <img src="https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?ixlib=rb-1.2.1&auto=format&fit=crop&w=2250&q=80" alt="concert photo" />
-                        </div>
+                    <div className='headerRight' id='allConcertsHeaderPhoto'>
+                        <h1>My Past Live Shows</h1>
                     </div>
-
-                </div>
-                <div className='headerDescription'>
-                    <h2>My Past Live Shows</h2>
                 </div>
 
                 <div className='pageBody'>
