@@ -1,61 +1,20 @@
-/* universal */
-
-.navBar {
-  display: flex;
-  background-color: black;
-  position: sticky;
-  top: 0;
-}
-
-.pageTitle {
-  width: 20%;
-  display:flex;
-  justify-content: center;
-}
-
-nav {
-  background-color: rgb(91, 110, 55);
-  width: 80%;
-  display:flex;
-  align-items: center;
-  justify-content: space-around;
-  font-family: arial;
-}
-
-nav a {
-  text-decoration: none;
-
-}
-
-a {
-  text-decoration: underline;
-  color: whitesmoke;
-}
-
-a:hover {
-  color:rgb(91, 110, 55);
-  /* font-size: 18px; */
-  transition: 0.3s ease;
-  cursor: pointer;
-}
-
+/* UNIVERSAL CSS */
 .App {
   text-align: center;
   background-color: rgb(32, 25, 32);
   font-family: 'McLaren', cursive;
   color: whitesmoke;
 }
-
-
-/* universal body */
-.body {
-  display: flex;
-  flex-direction: column;
-  margin-top: 80px;
+a {
+  text-decoration: underline;
+  color: whitesmoke;
+}
+a:hover {
+  color:rgb(91, 110, 55);
+  transition: 0.3s ease;
 }
 
-
-/* nav button animation */
+/* UNIVERSAL NAV BUTTON ANIMATION */
 .navButton {
 	line-height: 53px;
 	height: 50px;
@@ -101,9 +60,32 @@ a:hover {
   transform: scale(1,1);
 }
 
+/* UNIVERSAL BASIC NAV CSS */
+nav {
+  background-color: rgb(91, 110, 55);
+  width: 80%;
+  display:flex;
+  align-items: center;
+  justify-content: space-around;
+  font-family: arial;
+}
+nav a {
+  text-decoration: none;
+}
+.navBar {
+  display: flex;
+  background-color: black;
+  position: sticky;
+  top: 0;
+}
+.navPageTitle {
+  width: 20%;
+  display:flex;
+  justify-content: center;
+}
 
 
-/* header css */
+/* UNIVERSAL HEADER CSS & #HEADPHOTO */
 #homeHeaderPhoto {
   background-image: url(https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.goodfreephotos.com%2Falbums%2Fpeople%2Fcrowd-and-lights-at-a-concert.jpg&f=1&nofb=1);
   background-size: cover;
@@ -113,7 +95,6 @@ a:hover {
   background-image: url(https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?ixlib=rb-1.2.1&auto=format&fit=crop&w=2250&q=80);
   background-size: cover;
 }
-
 
 .header {
   display: flex;
@@ -137,20 +118,45 @@ a:hover {
 }
 
 
-/* home */
+
+/* UNIVERSAL BODY */
+.body {
+  display: flex;
+  flex-direction: column;
+  margin-top: 80px;
+}
+
+.bodyTitle {
+  font-size: 1.5em;
+  border: 5px solid black;
+  background-color:rgb(91, 110, 55);
+  margin: 0 auto;
+  width: 300px;
+  border-radius: 25px;
+}
+
+
+
+/* HOME CSS */
 .homeLink p {
   width: 515px;
   padding: 20px 0;
   margin: 0 auto;
-
+  border-radius: 80px;
 }
-
 .homeLink p:hover {
   box-shadow: 0px 0px 30px rgb(91, 110, 55);
   background-color: rgb(91, 110, 55);
   color:whitesmoke;
   transition: .8s;
 }
+.homeLink a {
+  text-decoration: none;
+}
+.homeLink img {
+  border-radius: 20px;
+}
+
 
 
 /* oneConcert */
@@ -255,15 +261,6 @@ a:hover {
   width: 463px;
   border-radius: 25px;
   padding: 30px 0;
-}
-
-.bodyTitle {
-  font-size: 1.5em;
-  border: 5px solid black;
-  background-color:rgb(91, 110, 55);
-  margin: 0 auto;
-  width: 300px;
-  border-radius: 25px;
 }
 
 .listOfBandsContainer {

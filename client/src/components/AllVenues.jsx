@@ -89,7 +89,7 @@ export default class AllVenues extends Component {
         return (
             <div>
                 <div className='navBar'>
-                    <h2 className='pageTitle'>Concert Recall</h2>
+                    <h2 className='navPageTitle'>Concert Recall</h2>
                     <nav>
                         <Link to='/'>
                             <div class="navButton">

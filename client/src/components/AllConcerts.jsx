@@ -90,7 +90,7 @@ export default class AllConcerts extends Component {
         return (
             <div>
                 <div className='navBar'>
-                    <h2 className='pageTitle'>Concert Recall</h2>
+                    <h2 className='navPageTitle'>Concert Recall</h2>
                     <nav>
                         <Link to='/'>
                             <div class="navButton">
@@ -118,7 +118,6 @@ export default class AllConcerts extends Component {
                     </nav>
                 </div>
 
-
                 <div className='header'>
                     <div className='headerLeft'>
                         {/* blank black space left of header */}
@@ -130,14 +129,14 @@ export default class AllConcerts extends Component {
 
 
                 <div className='body'>
-                    <div>
-                        <div className='bodyTitle'>
-                            <h1>My Shows</h1>
-                        </div>
-                        <div className='myFullConcertList'>
-                            {listOfConcerts}
-                        </div>
+
+                    <div className='bodyTitle'>
+                        <h1>My Shows</h1>
                     </div>
+                    <div className='myFullConcertList'>
+                        {listOfConcerts}
+                    </div>
+
 
 
                     <div className='createForm'>
