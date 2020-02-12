@@ -51,7 +51,7 @@ a:hover {
 .body {
   display: flex;
   flex-direction: column;
-  margin-top: 100px;
+  margin-top: 80px;
 }
 
 
@@ -137,6 +137,22 @@ a:hover {
 }
 
 
+/* home */
+.homeLink p {
+  width: 515px;
+  padding: 20px 0;
+  margin: 0 auto;
+
+}
+
+.homeLink p:hover {
+  box-shadow: 0px 0px 30px rgb(91, 110, 55);
+  background-color: rgb(91, 110, 55);
+  color:whitesmoke;
+  transition: .8s;
+}
+
+
 /* oneConcert */
 #oneConcertHeaderPhoto {
   background-image: url(https://images.unsplash.com/photo-1569982175971-d92b01cf8694?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=975&q=80);
@@ -151,16 +167,7 @@ a:hover {
 }
 
 
-.homeLink {
-  margin: 0 200px;
-}
 
-.homeLink p:hover {
-  box-shadow: 0px 0px 30px rgb(91, 110, 55);
-  background-color: rgb(91, 110, 55);
-  color:whitesmoke;
-  transition: .8s;
-}
 
 .link {
   margin: 20px; 
