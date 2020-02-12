@@ -90,12 +90,31 @@ export default class AllConcerts extends Component {
         return (
             <div>
                 <div className='navBar'>
-                    <h1 className='title' className='titleNotHomePage'>Concert Recall <br /> My Shows</h1>
+                    <h2 className='pageTitle'>Concert Recall</h2>
                     <nav>
-                        <Link to='/'><button>Home</button></Link>
-                        <Link to='/concert'><button>My Shows</button></Link>
-                        <Link to='/band'><button>Bands</button></Link>
-                        <Link to='/venue'><button>Venues</button></Link>
+                        <Link to='/'>
+                            <div class="navButton">
+                                <div>Home</div>
+                            </div>
+                        </Link>
+
+                        <Link to='/concert'>
+                            <div class="navButton">
+                                <div>My Shows</div>
+                            </div>
+                        </Link>
+
+                        <Link to='/band'>
+                            <div class="navButton">
+                                <div>Bands</div>
+                            </div>
+                        </Link>
+
+                        <Link to='/venue'>
+                            <div class="navButton">
+                                <div>Venues</div>
+                            </div>
+                        </Link>
                     </nav>
                 </div>
 
@@ -109,19 +128,15 @@ export default class AllConcerts extends Component {
                     </div>
                 </div>
 
-                <div className='pageBody'>
 
+                <div className='body'>
                     <div>
                         <div className='bodyTitle'>
                             <h1>My Shows</h1>
                         </div>
-
                         <div className='myFullConcertList'>
                             {listOfConcerts}
-
                         </div>
-
-
                     </div>
 
 
@@ -134,8 +149,7 @@ export default class AllConcerts extends Component {
                                 placeholder="Concert Name"
                                 required="required"
                                 onChange={this.handleInputChange}
-                                value={this.state.newConcert.newConcertName}
-                            />
+                                value={this.state.newConcert.newConcertName} />
 
                             <input
                                 type="string"
@@ -143,17 +157,12 @@ export default class AllConcerts extends Component {
                                 placeholder="Concert Date"
                                 required="required"
                                 onChange={this.handleInputChange}
-                                value={this.state.newConcert.newConcertDate}
-                            />
-
-
-
+                                value={this.state.newConcert.newConcertDate} />
 
                             <select
                                 name="bandId"
                                 onChange={this.handleInputChange}
-                                value={this.state.newConcert.bandId}
-                            >
+                                value={this.state.newConcert.bandId}>
                                 {this.state.bandData.map(
                                     (band) => {
                                         return <option value={band._id}>{band.bandName}</option>
@@ -164,8 +173,7 @@ export default class AllConcerts extends Component {
                             <select
                                 name="venueId"
                                 onChange={this.handleInputChange}
-                                value={this.state.newConcert.venueId}
-                            >
+                                value={this.state.newConcert.venueId}>
                                 {this.state.venueData.map(
                                     (venue) => {
                                         return <option value={venue._id}>{venue.venueName}</option>

@@ -43,12 +43,31 @@ export default class OneVenue extends Component {
                 <div>
 
                     <div className='navBar'>
-                        <h1 className='title' className='titleNotHomePage'>Concert Recall <br /> Venues</h1>
+                        <h2 className='pageTitle'>Concert Recall</h2>
                         <nav>
-                            <Link to='/'><button>Home</button></Link>
-                            <Link to='/concert'><button>My Shows</button></Link>
-                            <Link to='/band'><button>Bands</button></Link>
-                            <Link to='/venue'><button>Venues</button></Link>
+                            <Link to='/'>
+                                <div class="navButton">
+                                    <div>Home</div>
+                                </div>
+                            </Link>
+
+                            <Link to='/concert'>
+                                <div class="navButton">
+                                    <div>My Shows</div>
+                                </div>
+                            </Link>
+
+                            <Link to='/band'>
+                                <div class="navButton">
+                                    <div>Bands</div>
+                                </div>
+                            </Link>
+
+                            <Link to='/venue'>
+                                <div class="navButton">
+                                    <div>Venues</div>
+                                </div>
+                            </Link>
                         </nav>
                     </div>
 
@@ -76,11 +95,11 @@ export default class OneVenue extends Component {
 
                         <div className='oneVenueInfoBottom'>
                             <img src={this.state.venue.venuePhotoOne} alt="Venue Photo" />
-                        
+
                             <img src={this.state.venue.venuePhotoTwo} alt="Venue Photo" />
                         </div>
 
-                        
+
                     </div>
 
 

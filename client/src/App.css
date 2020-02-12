@@ -7,17 +7,29 @@
   top: 0;
 }
 
-nav a:hover {
-  color:rgb(32, 25, 32);
-  /* font-size: 18px; */
-  transition: 0.3s ease;
-  cursor: pointer;
+.pageTitle {
+  width: 20%;
+  display:flex;
+  justify-content: center;
+}
+
+nav {
+  background-color: rgb(91, 110, 55);
+  width: 80%;
+  display:flex;
+  align-items: center;
+  justify-content: space-around;
+  font-family: arial;
+}
+
+nav a {
+  text-decoration: none;
+
 }
 
 a {
   text-decoration: underline;
   color: whitesmoke;
-
 }
 
 a:hover {
@@ -34,74 +46,61 @@ a:hover {
   color: whitesmoke;
 }
 
-button {
-  height: 100px;
-  width: 243px;
-  position: relative;
-  /* padding: 10px;
-  padding-left: 60px;
-  padding-right: 60px; */
-  background-color: transparent;
-  outline: none;
-  border: none;
-  color: white;
-  font-size: 20px;
-  overflow: hidden;
-  cursor: pointer;
 
+/* universal body */
+.body {
+  display: flex;
+  flex-direction: column;
+  margin-top: 100px;
 }
 
-button:before {
-  position: absolute;
-  content: '';
-  height: 0;
-  width: 0;
-  border: 8px solid transparent;
-  bottom: 0;
-  left: 0;
-  box-sizing: border-box;
+
+/* nav button animation */
+.navButton {
+	line-height: 53px;
+	height: 50px;
+	text-align: center;
+	width: 110px;
   cursor: pointer;
-  
+  color: #FFF;
+	transition: all 0.5s;
+	position: relative;
+}
+.navButton::before {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 1;
+  background-color: rgb(91, 110, 55, .1);
+	transition: all 0.3s;
+}
+.navButton:hover::before {
+	opacity: 0 ;
+	transform: scale(0.5,0.5);
+}
+.navButton::after {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 1;
+	opacity: 0;
+	transition: all 0.3s;
+  border: 2px solid rgb(32, 25, 32);
+  background-color: rgb(91, 110, 55, .1);
+  transform: scale(1.2,1.2);
+  box-shadow: 0 0 30px rgb(32, 25, 32);
+}
+.navButton:hover::after {
+	opacity: 1;
+  transform: scale(1,1);
 }
 
-button:after {
-  position: absolute;
-  content: '';
-  height: 0;
-  width: 0;
-  border: 8px solid transparent;
-  top: 0;
-  right: 0;
-  box-sizing: border-box;
-  cursor: pointer;
-}
-
-button:hover:before {
-  height: 100px;
-  width: 320px;
-  border: 8px solid white;
-  border-right: none;
-  border-bottom: none;
-  cursor: pointer;
-
-  transition: height .5s linear,
-              width .5s linear .5s;
-
-}
-
-button:hover:after {
-  height: 100px;
-  width: 320px;
-  border: 8px solid white;
-  border-left: none;
-  border-top: none;
-  cursor: pointer;
-
-  transition: height .5s linear,
-              width .5s linear .5s;
-              
-  
-}
 
 
 /* header css */
@@ -151,10 +150,6 @@ button:hover:after {
   font-size: 1.5em;
 }
 
-.homeBody {
-  display: flex;
-  flex-direction: column;
-}
 
 .homeLink {
   margin: 0 200px;
@@ -197,11 +192,6 @@ button:hover:after {
   padding: 30px 0;
 }
 
-.title {
-  font-size: 1.5em;
-  padding: 40px 40px 0 40px;
-  width: 15%;
-}
 
 .titleNotHomePage {
   font-size: 1.5em;
@@ -273,9 +263,6 @@ button:hover:after {
   margin:62px 0;
 }
 
-
-
-
 input {
   margin: 0 10px;
 }
@@ -283,8 +270,6 @@ input {
 select {
   margin: 0 10px;
 }
-
-
 
 .myConcertListItem {
   background: black;
@@ -301,20 +286,6 @@ select {
 
 .myFullConcertList {
   margin: 37px;
-}
-
-.pageBody {
-  display: flex;
-  flex-direction: column;
-  margin-top: 600px;
-}
-
-nav {
-  background-color: rgb(91, 110, 55);
-  width: 85%;
-  padding: 10px 0 15px 0;
-  display:flex;
-  justify-content: space-around;
 }
 
 .videos {
@@ -346,14 +317,6 @@ img {
 }
 
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
 
 
 
