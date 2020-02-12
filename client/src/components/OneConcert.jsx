@@ -83,7 +83,7 @@ export default class OneConcert extends Component {
 
                             <Link to='/concert'>
                                 <div class="navButton">
-                                    <div>My Shows</div>
+                                    <div>Concerts</div>
                                 </div>
                             </Link>
 

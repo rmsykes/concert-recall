@@ -20,7 +20,8 @@ export default class AllConcerts extends Component {
             myConcertVideoThree: ''
         },
         bandData: [],
-        venueData: []
+        venueData: [],
+        isHidden: true,
     }
 
     // componentDidMount() - retreives /api/concert data & runs getBandData() to get /api/band data
@@ -68,24 +69,113 @@ export default class AllConcerts extends Component {
     }
 
 
+    // toggles seeing create concert form with create form button
+    toggleHidden = () => {
+        this.setState({
+            isHidden: !this.state.isHidden
+        })
+    }
+
+    concertForm = () => {
+        return (
+            <div className='createForm'>
+                <form id='userform' onSubmit={this.createConcert}>
+                    <h2>Create Concert</h2>
+                    <input
+                        type="string"
+                        name="concertName"
+                        placeholder="Concert Name"
+                        required="required"
+                        onChange={this.handleInputChange}
+                        value={this.state.newConcert.newConcertName} />
+
+                    <input
+                        type="string"
+                        name="date"
+                        placeholder="Concert Date"
+                        required="required"
+                        onChange={this.handleInputChange}
+                        value={this.state.newConcert.newConcertDate} />
+
+                    <select
+                        name="bandId"
+                        onChange={this.handleInputChange}
+                        value={this.state.newConcert.bandId}>
+                        {this.state.bandData.map(
+                            (band) => {
+                                return <option value={band._id}>{band.bandName}</option>
+                            }
+                        )}
+                    </select>
+
+                    <select
+                        name="venueId"
+                        onChange={this.handleInputChange}
+                        value={this.state.newConcert.venueId}>
+                        {this.state.venueData.map(
+                            (venue) => {
+                                return <option value={venue._id}>{venue.venueName}</option>
+                            }
+                        )}
+                    </select>
+
+                    <br />
+                    <br />
+                    <input
+                        type="string"
+                        name="myConcertVideoOne"
+                        placeholder="My Concert Video URL"
+                        onChange={this.handleInputChange}
+                        value={this.state.newConcert.newConcertDate} />
+                    <input
+                        type="string"
+                        name="myConcertVideoTwo"
+                        placeholder="My Concert Video URL"
+                        onChange={this.handleInputChange}
+                        value={this.state.newConcert.newConcertDate} />
+
+                    <input
+                        type="string"
+                        name="myConcertVideoThree"
+                        placeholder="My Concert Video URL"
+                        onChange={this.handleInputChange}
+                        value={this.state.newConcert.newConcertDate} />
+                    <br />
+                    <br />
+                    <textarea
+                        type="string"
+                        name="description"
+                        placeholder="Concert Description: setlist or other information"
+                        cols="98"
+                        rows='5'
+                        form='userform'
+                        onChange={this.handleInputChange}
+                        value={this.state.newConcert.newConcertDescription} />
+
+                    <br />
+                    <br />
+
+                    <input type="submit" value="Create Concert" />
+                </form>
+            </div>)
+    }
+
     // Rendered in Browser
     render() {
 
 
         const listOfConcerts = this.state.concertData.map(
             (concertData) => {
-                return <div className='myConcertListItem'>
+                return <div className='myConcertListItemWidthAndSpacing'>
                     <Link to={`/concert/${concertData._id}`}>
-                        <div className="link">
+                        <div className='myConcertListItemDescriptionAndLink'>
                             <h2>{concertData.concertName}</h2>
                             <h2>{concertData.date}</h2>
 
                         </div>
                     </Link>
-
                 </div>
-            }
-        )
+            })
 
         return (
             <div>
@@ -100,7 +190,7 @@ export default class AllConcerts extends Component {
 
                         <Link to='/concert'>
                             <div class="navButton">
-                                <div>My Shows</div>
+                                <div>Concerts</div>
                             </div>
                         </Link>
 
@@ -129,103 +219,23 @@ export default class AllConcerts extends Component {
 
 
                 <div className='body'>
-
-                    <div className='bodyTitle'>
-                        <h1>My Shows</h1>
+                    <div class='myShowsArea'>
+                        <h1 className='bodySectionTitle' id='myShowsSectionTitle'>My Concerts</h1>
+                        <div className='myFullConcertList'>
+                            {listOfConcerts}
+                        </div>
                     </div>
-                    <div className='myFullConcertList'>
-                        {listOfConcerts}
+
+
+                    <div className='createFormArea'>
+                        <h1 className='bodySectionTitle'>Create New Concert</h1>
+                        <div className='createNewFormToggleButton'>
+                            {/* button that toggles the create pretzel form. */}
+                            <button onClick={this.toggleHidden}>New Concert Form</button>
+                        </div>
+                        {this.state.isHidden === false ? this.concertForm() : null}
                     </div>
 
-
-
-                    <div className='createForm'>
-                        <form id='userform' onSubmit={this.createConcert}>
-                            <h2>Create Concert</h2>
-                            <input
-                                type="string"
-                                name="concertName"
-                                placeholder="Concert Name"
-                                required="required"
-                                onChange={this.handleInputChange}
-                                value={this.state.newConcert.newConcertName} />
-
-                            <input
-                                type="string"
-                                name="date"
-                                placeholder="Concert Date"
-                                required="required"
-                                onChange={this.handleInputChange}
-                                value={this.state.newConcert.newConcertDate} />
-
-                            <select
-                                name="bandId"
-                                onChange={this.handleInputChange}
-                                value={this.state.newConcert.bandId}>
-                                {this.state.bandData.map(
-                                    (band) => {
-                                        return <option value={band._id}>{band.bandName}</option>
-                                    }
-                                )}
-                            </select>
-
-                            <select
-                                name="venueId"
-                                onChange={this.handleInputChange}
-                                value={this.state.newConcert.venueId}>
-                                {this.state.venueData.map(
-                                    (venue) => {
-                                        return <option value={venue._id}>{venue.venueName}</option>
-                                    }
-                                )}
-                            </select>
-
-                            <br />
-                            <br />
-                            <input
-                                type="string"
-                                name="myConcertVideoOne"
-                                placeholder="My Concert Video URL"
-                                onChange={this.handleInputChange}
-                                value={this.state.newConcert.newConcertDate}
-                            />
-
-                            <input
-                                type="string"
-                                name="myConcertVideoTwo"
-                                placeholder="My Concert Video URL"
-                                onChange={this.handleInputChange}
-                                value={this.state.newConcert.newConcertDate}
-                            />
-
-                            <input
-                                type="string"
-                                name="myConcertVideoThree"
-                                placeholder="My Concert Video URL"
-                                onChange={this.handleInputChange}
-                                value={this.state.newConcert.newConcertDate}
-                            />
-
-                            <br />
-                            <br />
-
-                            <textarea
-                                type="string"
-                                name="description"
-                                placeholder="Concert Description: setlist or other information"
-                                cols="98"
-                                rows='5'
-                                form='userform'
-                                onChange={this.handleInputChange}
-                                value={this.state.newConcert.newConcertDescription}
-                            />
-
-                            <br />
-                            <br />
-
-                            <input type="submit" value="Create Concert" />
-                        </form>
-                    </div>
                 </div>
             </div>
         )
