@@ -83,14 +83,14 @@ export default class AllBands extends Component {
 
         const listOfBands = this.state.listOfBands.map(
             (band) => {
-                return <div>
+                return <div className='oneBandFromListOfBands'>
                     <Link to={`/band/${band._id}`}>
-                        <div className='link'>
+                        <p>
                             <h2>{band.bandName}</h2>
-                            <div className='band-photo'>
+                            <div className='bandPhotoFromListOfBands'>
                                 <img src={band.bandPhoto} alt="band photo" />
                             </div>
-                        </div>
+                        </p>
                     </Link>
                 </div>
             })
@@ -128,35 +128,25 @@ export default class AllBands extends Component {
                 </div>
 
 
-                <div className='homeHeader'>
-                    <div className='homeHeaderLeft'>
+                <div className='header'>
+                    <div className='headerLeft'>
+                        {/* blank black space left of header */}
                     </div>
+                    <div className='headerRight' id='allBandsHeaderPhoto'>
+                        <h1>My Bands</h1>
+                    </div>
+                </div>
 
-                    <div className='homeHeaderRight'>
 
-                        <div className='homeHeaderPhoto'>
-                            <img src="https://images.unsplash.com/photo-1499364615650-ec38552f4f34?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1932&q=80" alt="concert photo" />
+                <div className='body'>
+                    <div className='allBandsSectionContainer'>
+                        <h1 className='bodySectionTitle'>Bands</h1>
+
+                        <div className='listOfBandsContainer'>
+                            {listOfBands}
                         </div>
                     </div>
-
                 </div>
-                <div className='headerDescription'>
-                    <h2>Live Shows By Your Favorite Bands.</h2>
-                </div>
-
-
-
-
-                <div className='pageBody'>
-                    <div className='bodyTitle'>
-                        <h1>Bands</h1>
-                    </div>
-                </div>
-
-                <div className='listOfBandsContainer'>
-                    {listOfBands}
-                </div>
-
 
                 <div className='createForm'>
                     <h2>Create Band</h2>
@@ -213,7 +203,7 @@ export default class AllBands extends Component {
                     <button onClick={() => this.createBand()}>Create Band</button>
                 </div>
 
-            </div>
+            </div >
         )
     }
 }

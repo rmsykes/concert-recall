@@ -56,6 +56,7 @@ a {
   margin: 50px auto;
   padding: 10px 8px;
   font-weight: bold;
+  border-radius: 10px;
 }
 .deleteButton:hover {
   background-color: red;
@@ -148,6 +149,11 @@ nav a {
   background-image: url(https://images.unsplash.com/photo-1569982175971-d92b01cf8694?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=975&q=80);
   background-size: cover;
 }
+#allBandsHeaderPhoto {
+  background-image: url(https://images.unsplash.com/photo-1499364615650-ec38552f4f34?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1932&q=80);
+  background-size: cover;
+
+}
 .header {
   display: flex;
 }
@@ -161,7 +167,7 @@ nav a {
 }
 .headerRight h1 {
   font-size: 34px;
-  margin: 105px 0 0 -40px;
+  margin: 105px 0 0 -55px;
   text-align: left;
 }
 
@@ -186,7 +192,7 @@ nav a {
 /* HOME PAGE CSS */
 .homeLink p {
   width: 515px;
-  padding: 20px 0;
+  padding: 20px 0 60px 0;
   margin: 0 auto;
   border-radius: 80px;
 }
@@ -201,18 +207,18 @@ nav a {
 }
 .homeLink img {
   border-radius: 20px;
+  width: 400px;
 }
+
 
 
 /* ALL CONCERTS PAGE CSS */
 .myShowsArea {
-
 }
 #myShowsSectionTitle {
   width: 220px;
 }
 .myFullConcertList {
-
 }
 .myConcertListItemWidthAndSpacing {
   width: 400px;
@@ -235,14 +241,35 @@ nav a {
 
 /* ONE CONCERT PAGE CSS */
 .oneConcertInfo {
-
 }
 .myConcertVideosSection {
-
 }
 .oneConcertInfo h1 {
   margin: 45px auto;
   text-align: center;
+}
+
+/* ALL BANDS PAGE CSS */
+.allBandsSectionContainer{
+}
+.listOfBandsContainer {
+  margin: 25px 0;
+}
+.oneBandFromListOfBands {
+  width: 315px;
+  margin: 0 auto;
+  padding: 20px;
+}
+.oneBandFromListOfBands p {
+  padding: 1px 0 20px 0;
+  border-radius: 20px;
+}
+.oneBandFromListOfBands p:hover {
+  background-color: rgb(91, 110, 55);
+}
+.bandPhotoFromListOfBands img {
+  width: 195px;
+  border-radius: 10px;
 }
 
 
@@ -309,9 +336,7 @@ nav a {
   width:300px;
 }
 
-.listOfBandsContainer {
-  margin:62px 0;
-}
+
 
 input {
   margin: 0 10px;
@@ -322,16 +347,6 @@ select {
 }
 
 
-img {
-  width: 400px;
-  margin-bottom: 40px;
-}
-
-
-.band-photo img {
-  width: 175px;
-  border-radius: 50%;
-}
 
 
 
