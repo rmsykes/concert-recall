@@ -155,10 +155,16 @@ export default class AllConcerts extends Component {
                     <br />
                     <br />
 
-                    <input type="submit" value="Create Concert" />
+                    <input className='submitFormButton' onClick={this.alertConcertMade} type="submit" value="Create Concert" />
                 </form>
-            </div>)
+            </div>
+        )
     }
+
+    alertConcertMade = () => {
+        alert("Concert Created!");
+    }
+
 
     // Rendered in Browser
     render() {
@@ -229,9 +235,9 @@ export default class AllConcerts extends Component {
 
                     <div className='createFormArea'>
                         <h1 className='bodySectionTitle'>Create New Concert</h1>
-                        <div className='createNewFormToggleButton'>
+                        <div>
                             {/* button that toggles the create pretzel form. */}
-                            <button onClick={this.toggleHidden}>New Concert Form</button>
+                            <button className='createNewFormButton' onClick={this.toggleHidden}>New Concert Form</button>
                         </div>
                         {this.state.isHidden === false ? this.concertForm() : null}
                     </div>

@@ -101,6 +101,7 @@ export default class OneConcert extends Component {
                         </nav>
                     </div>
 
+
                     <div className='header'>
                         <div className='headerLeft'>
                             {/* blank black space left of header */}
@@ -125,62 +126,26 @@ export default class OneConcert extends Component {
                         </div>
                     </div>
 
-                    {/* <div className='homeHeader'>
-                        <div className='homeHeaderLeft'>
-                        </div>
+                    <div className='body'>
+                        <div className='myConcertVideosSection'>
+                            <h1 className='bodySectionTitle'>Videos from the Show:</h1>
+                            <div className='videosListContainer'>
+                                <div className='videos'>
+                                    <ReactPlayer url={this.state.concert.myConcertVideoOne} />
+                                </div>
 
-                        <div className='homeHeaderRight'>
+                                <div className='videos'>
+                                    <ReactPlayer url={this.state.concert.myConcertVideoTwo} />
+                                </div>
 
-                            <div className='homeHeaderPhoto'>
-                                <img src="https://images.unsplash.com/photo-1569982175971-d92b01cf8694?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=975&q=80" alt="concert photo" />
+                                <div className='videos'>
+                                    <ReactPlayer url={this.state.concert.myConcertVideoThree} />
+                                </div>
                             </div>
+
                         </div>
-
-                    </div> */}
-
-                    {/* <div className='myConcertBody'>
-                        <div className='myConcertTitle'>
-                            <h1>{this.state.concert.concertName}</h1>
-                        </div>
-
-                        <Link to={`/band/${this.state.concert.bandId}`}><h2>{bandName}</h2></Link>
-                        <Link to={`/venue/${this.state.concert.venueId}`}><h2>{venueName}</h2></Link>
-
-                        <br />
-                        <h2>{this.state.concert.date}</h2>
-
-                        <br />
-                        <h2>Show Description:</h2>
-                        <h3>{this.state.concert.description}</h3>
-
-                    </div> */}
-
-                    <div className='myVideosContainer'>
-
-                        <h2>Videos from the Show:</h2>
-
-                        <div className='videos'>
-                            <ReactPlayer
-                                url={this.state.concert.myConcertVideoOne}
-                            />
-                        </div>
-
-                        <div className='videos'>
-                            <ReactPlayer
-                                url={this.state.concert.myConcertVideoTwo}
-                            />
-                        </div>
-
-                        <div className='videos'>
-                            <ReactPlayer
-                                url={this.state.concert.myConcertVideoThree}
-                            />
-                        </div>
+                        <button class='deleteButton' onClick={() => this.deleteConcert()}>Delete This Concert</button>
                     </div>
-
-
-                    <button id='deleteConcertButton' onClick={() => this.deleteConcert()}>Delete This Concert</button>
-
 
                 </div>
         )
