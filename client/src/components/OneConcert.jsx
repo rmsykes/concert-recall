@@ -108,9 +108,7 @@ export default class OneConcert extends Component {
                         </div>
                         <div className='headerRight' id='oneConcertHeaderPhoto'>
                             <div className='oneConcertInfo'>
-                                <div className='oneConcertTitle'>
-                                    <h2>{this.state.concert.concertName}</h2>
-                                </div>
+                                    <h1>{this.state.concert.concertName}</h1>
 
                                 <Link to={`/band/${this.state.concert.bandId}`}><h2>{bandName}</h2></Link>
                                 <Link to={`/venue/${this.state.concert.venueId}`}><h2>{venueName}</h2></Link>

@@ -240,7 +240,10 @@ nav a {
 .myConcertVideosSection {
 
 }
-
+.oneConcertInfo h1 {
+  margin: 45px auto;
+  text-align: center;
+}
 
 
 /* ONE BAND PAGE CSS */
