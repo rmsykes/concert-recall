@@ -61,7 +61,7 @@ export default class AllConcerts extends Component {
             })
     }
 
-    // onConcertNameChange() - sets the state of newConcertName from the input feild for Concert Name when called on a change contiuousely
+    // handleInputChange() - sets state from input feild tageted in input field below
     handleInputChange = (evt) => {
         const copiedNewConcert = { ...this.state.newConcert }
         copiedNewConcert[evt.target.name] = evt.target.value;
@@ -79,7 +79,7 @@ export default class AllConcerts extends Component {
     concertForm = () => {
         return (
             <div className='createForm'>
-                <form id='userform' onSubmit={this.createConcert}>
+                <form onSubmit={this.createConcert}>
                     <h2>Create Concert</h2>
                     <input
                         type="string"
@@ -118,7 +118,6 @@ export default class AllConcerts extends Component {
                             }
                         )}
                     </select>
-
                     <br />
                     <br />
                     <input
@@ -168,7 +167,6 @@ export default class AllConcerts extends Component {
 
     // Rendered in Browser
     render() {
-
 
         const listOfConcerts = this.state.concertData.map(
             (concertData) => {
