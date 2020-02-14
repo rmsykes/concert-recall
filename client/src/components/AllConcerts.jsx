@@ -76,6 +76,12 @@ export default class AllConcerts extends Component {
         })
     }
 
+    // alert displayed when concert is created
+    alertConcertMade = () => {
+        alert("Concert Created!");
+    }
+
+    // toggled concert form shown and hidden on click of button
     concertForm = () => {
         return (
             <div className='createForm'>
@@ -158,10 +164,6 @@ export default class AllConcerts extends Component {
                 </form>
             </div>
         )
-    }
-
-    alertConcertMade = () => {
-        alert("Concert Created!");
     }
 
 

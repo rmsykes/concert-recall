@@ -30,7 +30,6 @@ export default class AllBands extends Component {
             })
     }
 
-
     // createBand() - posts band & genre from input feilds (which are set to state) to the backend /api/band
     createBand = (evt) => {
         evt.preventDefault()
@@ -55,6 +54,10 @@ export default class AllBands extends Component {
         this.setState({
             isHidden: !this.state.isHidden
         })
+    }
+
+    alertBandMade = () => {
+        alert("Band Created!");
     }
 
     // band form toggled on and off by create band button
@@ -114,7 +117,7 @@ export default class AllBands extends Component {
                     <br />
                     <br />
 
-                    <input className='submitFormButton' onClick={this.alertConcertMade} type='submit' value="Create Band"></input>
+                    <input className='submitFormButton' onClick={this.alertBandMade} type='submit' value="Create Band"></input>
                 </form>
             </div>
         )

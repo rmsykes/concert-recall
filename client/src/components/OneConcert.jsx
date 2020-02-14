@@ -39,7 +39,7 @@ export default class OneConcert extends Component {
             })
     }
 
-
+    // get one band data pulled in through concert data which is populated in state and sets state of band object
     getOneBand = () => {
         axios.get(`/api/band/${this.state.concert.bandId}`)
             .then((res) => {
@@ -47,6 +47,7 @@ export default class OneConcert extends Component {
             })
     }
 
+    // get one venue data pulled in through concert data which is populated in state and sets state of venue object
     getOneVenue = () => {
         axios.get(`/api/venue/${this.state.concert.venueId}`)
             .then((res) => {
@@ -54,7 +55,7 @@ export default class OneConcert extends Component {
             })
     }
 
-    // deleteConcert() - deletes concert by concertId from db api/concert
+    // deletes concert by concertId pulled from url from db api/concert & redirects to concerts page
     deleteConcert = () => {
         axios.delete(`/api/concert/${this.props.match.params.concertId}`)
             .then((res) => {
@@ -68,6 +69,7 @@ export default class OneConcert extends Component {
         const venueName = this.state.venue.venueName
         return (
 
+            // redirects to /concert when deleteConcert happens
             this.state.isRedirect ? <Redirect to="/concert" /> :
 
                 <div>
@@ -80,19 +82,16 @@ export default class OneConcert extends Component {
                                     <div>Home</div>
                                 </div>
                             </Link>
-
                             <Link to='/concert'>
                                 <div class="navButton">
                                     <div>Concerts</div>
                                 </div>
                             </Link>
-
                             <Link to='/band'>
                                 <div class="navButton">
                                     <div>Bands</div>
                                 </div>
                             </Link>
-
                             <Link to='/venue'>
                                 <div class="navButton">
                                     <div>Venues</div>

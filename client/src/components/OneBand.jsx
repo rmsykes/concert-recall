@@ -86,7 +86,6 @@ export default class OneBand extends Component {
                                 <img src="https://images.unsplash.com/photo-1569982175971-d92b01cf8694?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=975&q=80" alt="concert photo" />
                             </div>
                         </div>
-
                     </div>
 
                     <div className='oneBandInfo'>
@@ -105,26 +104,17 @@ export default class OneBand extends Component {
                     <div className='oneBandVideosList'>
                         <h2>Featured Shows and Videos</h2>
                         <div className='videos'>
-                            <ReactPlayer
-                                url={this.state.band.concertVideoOne}
-                            />
+                            <ReactPlayer url={this.state.band.concertVideoOne} />
                         </div>
 
                         <div className='videos'>
-                            <ReactPlayer
-                                url={this.state.band.concertVideoTwo}
-                            />
+                            <ReactPlayer url={this.state.band.concertVideoTwo} />
                         </div>
 
                         <div className='videos'>
-                            <ReactPlayer
-                                url={this.state.band.concertVideoThree}
-                            />
+                            <ReactPlayer url={this.state.band.concertVideoThree} />
                         </div>
                     </div>
-
-
-
 
                     {/* COMMENTED OUT DELETE BUTTON SO THAT IT DOESNT BREAK MY DB */}
                     {/* <button onClick={() => this.deleteBand()}>Delete Band</button> */}

@@ -35,8 +35,8 @@ a {
   font-weight: bold;
 }
 .submitFormButton:hover{
-  background-color: rgb(32, 25, 32);
-  border: solid 1px rgb(32, 25, 32);
+  background-color: rgb(95, 29, 95);
+  border: solid 1px rgb(95, 29, 95);
   color: whitesmoke;
   cursor: pointer;
 }
@@ -200,7 +200,7 @@ nav a {
   box-shadow: 0px 0px 30px rgb(91, 110, 55);
   background-color: rgb(91, 110, 55);
   color:whitesmoke;
-  transition: .8s;
+  transition: .3s;
 }
 .homeLink a {
   text-decoration: none;
@@ -263,6 +263,7 @@ nav a {
 .oneBandFromListOfBands p {
   padding: 1px 0 20px 0;
   border-radius: 20px;
+  transition: .3s;
 }
 .oneBandFromListOfBands p:hover {
   background-color: rgb(91, 110, 55);
