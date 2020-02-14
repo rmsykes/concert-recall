@@ -67,13 +67,12 @@ export default class OneConcert extends Component {
     render() {
         const bandName = this.state.band.bandName
         const venueName = this.state.venue.venueName
-        return (
 
+        return (
             // redirects to /concert when deleteConcert happens
             this.state.isRedirect ? <Redirect to="/concert" /> :
 
                 <div>
-
                     <div className='navBar'>
                         <h2 className='navPageTitle'>Concert Recall</h2>
                         <nav>

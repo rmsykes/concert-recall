@@ -14,7 +14,8 @@ export default class AllVenues extends Component {
         newVenueLocation: '',
         newVenuecapacity: Number,
         newVenuePhotoOne: '',
-        newVenuePhotoTwo: ''
+        newVenuePhotoTwo: '',
+        isHidden: true,
     }
 
     // componentDidMount() - retreives /api/venue data
@@ -68,23 +69,90 @@ export default class AllVenues extends Component {
         this.setState({ newVenuePhotoTwo: newVenuePhotoTwo })
     }
 
+    // toggles seeing create concert form with create form button
+    toggleHidden = () => {
+        this.setState({
+            isHidden: !this.state.isHidden
+        })
+    }
+
+    alertVenueMade = () => {
+        alert("Venue Created!");
+    }
+
+    venueForm = () => {
+        return (
+            <div className='createForm'>
+                <form onSubmit={this.createVenue}>
+                    <h2>Create Venue</h2>
+
+                    <input
+                        type="string"
+                        name="venueName"
+                        placeholder="Venue Name"
+                        required="required"
+                        onChange={this.onVenueNameChange}
+                        value={this.state.onVenueNameChange} />
+
+                    <input
+                        type="string"
+                        name="venueLocation"
+                        placeholder="Venue Location"
+                        required="required"
+                        onChange={this.onVenueLocationChange}
+                        value={this.state.onVenueLocationChange} />
+
+                    <input
+                        type="number"
+                        name="venueCapacity"
+                        placeholder="Venue Capacity"
+                        onChange={this.onVenueCapacityChange}
+                        value={this.state.onVenueCapacityChange} />
+                    <br />
+                    <br />
+                    <input
+                        type="string"
+                        name="newVenuePhotoOne"
+                        placeholder="Venue Photo"
+                        onChange={this.onVenuePhotoOneChange}
+                        value={this.state.onVenuePhotoOneChange} />
+
+                    <input
+                        type="string"
+                        name="newVenuePhotoTwo"
+                        placeholder="Venue Photo"
+                        onChange={this.onVenuePhotoTwoChange}
+                        value={this.state.onVenuePhotoTwoChange} />
+                    <br />
+                    <br />
+                    <input className='submitFormButton' onClick={this.alertVenueMade} type='submit' value="Create Venue"></input>
+
+                </form>
+            </div>
+        )
+    }
+
+
     // Rendered in Browser
     render() {
 
         const listOfVenues = this.state.venueData.map(
             (venueData) => {
-                return <div className='venueListName'>
+                return <div className='oneVenueFromListOfVenues'>
                     <Link to={`/venue/${venueData._id}`}>
-                        <div>
-                            <h2>{venueData.venueName}</h2>
-                            <p>{venueData.location}</p>
-                            <img className='venueListImage' src={venueData.venuePhotoOne} alt="venue photo"/>
-                        </div>
+                        <p>
+                            <div>
+                                <h2>{venueData.venueName}</h2>
+                                <h3>{venueData.location}</h3>
+                                <div className='oneVenuePhotoFromListOfVenues'>
+                                    <img src={venueData.venuePhotoOne} alt="venue photo" />
+                                </div>
+                            </div>
+                        </p>
                     </Link>
                 </div>
             }
         )
-
 
         return (
             <div>
@@ -96,19 +164,16 @@ export default class AllVenues extends Component {
                                 <div>Home</div>
                             </div>
                         </Link>
-
                         <Link to='/concert'>
                             <div class="navButton">
                                 <div>Concerts</div>
                             </div>
                         </Link>
-
                         <Link to='/band'>
                             <div class="navButton">
                                 <div>Bands</div>
                             </div>
                         </Link>
-
                         <Link to='/venue'>
                             <div class="navButton">
                                 <div>Venues</div>
@@ -117,79 +182,33 @@ export default class AllVenues extends Component {
                     </nav>
                 </div>
 
-                <div className='homeHeader'>
-                    <div className='homeHeaderLeft'>
+                <div className='header'>
+                    <div className='headerLeft'>
+                        {/* blank black space left of header */}
                     </div>
+                    <div className='headerRight' id='allVenuesHeaderPhoto'>
+                        <h1>My Venues</h1>
+                    </div>
+                </div>
 
-                    <div className='homeHeaderRight'>
 
-                        <div className='homeHeaderPhoto'>
-                            <img src="https://images.unsplash.com/photo-1561114601-81d07393ee3d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2689&q=80" alt="concert photo" />
+                <div className='body'>
+                    <div className='allVenuesSectionContainer'>
+                        <h1 className='bodySectionTitle'>Venues</h1>
+
+                        <div className='listOfVenuesContainer'>
+                            {listOfVenues}
                         </div>
                     </div>
 
-                </div>
-                <div className='headerDescription'>
-                    <h2>Info On Your Favorite Venues</h2>
-                </div>
-
-                <div className='pageBody'>
-                    <div className='bodyTitle'>
-                        <h1>Venues</h1>
+                    <div className='createFormArea'>
+                        <h1 className='bodySectionTitle'>Create New Band</h1>
+                        <div>
+                            {/* button that toggles the create pretzel form. */}
+                            <button className='createNewFormButton' onClick={this.toggleHidden}>New Venue Form</button>
+                        </div>
+                        {this.state.isHidden === false ? this.venueForm() : null}
                     </div>
-                </div>
-
-                <div className='listOfVenuesContainer'>
-                    {listOfVenues}
-                </div>
-
-
-                <div className='createForm'>
-                    <h2>Create Venue</h2>
-
-                    <input
-                        type="string"
-                        name="venueName"
-                        placeholder="Venue Name"
-                        required="required"
-                        onChange={this.onVenueNameChange}
-                        value={this.state.onVenueNameChange}
-                    />
-
-                    <input
-                        type="string"
-                        name="venueLocation"
-                        placeholder="Venue Location"
-                        required="required"
-                        onChange={this.onVenueLocationChange}
-                        value={this.state.onVenueLocationChange}
-                    />
-
-                    <input
-                        type="number"
-                        name="venueCapacity"
-                        placeholder="Venue Capacity"
-                        onChange={this.onVenueCapacityChange}
-                        value={this.state.onVenueCapacityChange}
-                    />
-
-                    <input
-                        type="string"
-                        name="newVenuePhotoOne"
-                        placeholder="Venue Photo"
-                        onChange={this.onVenuePhotoOneChange}
-                        value={this.state.onVenuePhotoOneChange}
-                    />
-
-                    <input
-                        type="string"
-                        name="newVenuePhotoTwo"
-                        placeholder="Venue Photo"
-                        onChange={this.onVenuePhotoTwoChange}
-                        value={this.state.onVenuePhotoTwoChange}
-                    />
-
-                    <button onClick={() => this.createVenue()}>Create Venue</button>
                 </div>
             </div>
         )

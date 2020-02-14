@@ -9,6 +9,12 @@ a {
   text-decoration: underline;
   color: whitesmoke;
 }
+input {
+  margin: 0 10px;
+}
+select {
+  margin: 0 10px;
+}
 .createFormArea {
   margin: 80px auto;
 }
@@ -157,6 +163,10 @@ nav a {
   background-image: url(https://images.unsplash.com/photo-1569982175971-d92b01cf8694?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=975&q=80);
   background-size: cover;
 }
+#allVenuesHeaderPhoto {
+  background-image: url(https://images.unsplash.com/photo-1561114601-81d07393ee3d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2689&q=80);
+  background-size: cover;
+}
 .header {
   display: flex;
 }
@@ -231,7 +241,7 @@ nav a {
   color:rgb(104, 131, 52);  /* a little more neon than normal green used*/
   cursor: pointer;
 }
-.myConcertListItemDescriptionAndLink{
+.myConcertListItemDescriptionAndLink {
   background: black;
   padding: 10px;
   border-radius: 25px;
@@ -239,6 +249,9 @@ nav a {
 .myConcertListItemDescriptionAndLink:hover {
   box-shadow: 0px 0px 50px rgb(91, 110, 55);
   transition: .3s ease;
+}
+.myConcertListItemWidthAndSpacing a {
+  text-decoration: none;
 }
 
 
@@ -251,17 +264,23 @@ nav a {
   margin: 45px auto;
   text-align: center;
 }
+.oneConcertInfo a:hover {
+  color:rgb(104, 131, 52);  /* a little more neon than normal green used*/
+}
 
 /* ALL BANDS PAGE CSS */
 .allBandsSectionContainer{
 }
 .listOfBandsContainer {
-  margin: 25px 0;
+  margin: 25px auto;
 }
 .oneBandFromListOfBands {
   width: 315px;
   margin: 0 auto;
   padding: 20px;
+}
+.oneBandFromListOfBands a {
+  text-decoration: none;
 }
 .oneBandFromListOfBands p {
   padding: 1px 0 20px 0;
@@ -271,7 +290,7 @@ nav a {
 .oneBandFromListOfBands p:hover {
   background-color: rgb(91, 110, 55);
 }
-.bandPhotoFromListOfBands img {
+.oneBandPhotoFromListOfBands img {
   width: 195px;
   border-radius: 10px;
 }
@@ -287,10 +306,36 @@ nav a {
   border-radius: 10px;
 }
 .oneBandVideosSection{
-  /* padding-bottom: 150px; */
 }
 #featuredShowsAndVideosTitle {
   width: 380px;
+}
+
+/* ALL VENUE PAGE CSS */
+.allVenuesSectionContainer{
+}
+.listOfVenuesContainer {
+  margin: 25px auto;
+}
+.oneVenueFromListOfVenues{
+  width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+}
+.oneVenueFromListOfVenues p {
+  padding: 1px 0 20px 0;
+  border-radius: 20px;
+  transition: .3s;
+}
+.oneVenueFromListOfVenues p:hover {
+  background-color: rgb(91, 110, 55);
+}
+.oneVenuePhotoFromListOfVenues img {
+  width: 450px;
+  border-radius: 10px;
+}
+.oneVenueFromListOfVenues a {
+  text-decoration: none;
 }
 
 
@@ -299,7 +344,6 @@ nav a {
 .oneVenueInfoTop {
   margin: 20px auto
 }
-
 .oneVenueInfoBottom {
   display:flex;
   justify-content: space-around;
@@ -307,47 +351,13 @@ nav a {
   width: 925px;
   padding-top: 45px;
 }
-
 .oneVenueInfoBottom img {
   border-radius: 25px;
 }
-
 .oneVenueInfo {
   margin:-780px 0 0 105px;
   padding-bottom: 200px;
 }
-
 .oneVenueTitle {
   font-size: 1.5em;
 }
-
-.listOfVenuesContainer {
-  margin:45px 0;
-}
-
-.venueListName {
-  margin:20px;
-}
-
-
-.venueListImage {
-  border-radius: 25px;
-  width:300px;
-}
-
-
-
-input {
-  margin: 0 10px;
-}
-
-select {
-  margin: 0 10px;
-}
-
-
-
-
-
-
-

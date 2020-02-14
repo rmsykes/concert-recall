@@ -193,19 +193,16 @@ export default class AllConcerts extends Component {
                                 <div>Home</div>
                             </div>
                         </Link>
-
                         <Link to='/concert'>
                             <div class="navButton">
                                 <div>Concerts</div>
                             </div>
                         </Link>
-
                         <Link to='/band'>
                             <div class="navButton">
                                 <div>Bands</div>
                             </div>
                         </Link>
-
                         <Link to='/venue'>
                             <div class="navButton">
                                 <div>Venues</div>

@@ -133,7 +133,7 @@ export default class AllBands extends Component {
                     <Link to={`/band/${band._id}`}>
                         <p>
                             <h2>{band.bandName}</h2>
-                            <div className='bandPhotoFromListOfBands'>
+                            <div className='oneBandPhotoFromListOfBands'>
                                 <img src={band.bandPhoto} alt="band photo" />
                             </div>
                         </p>
@@ -152,19 +152,16 @@ export default class AllBands extends Component {
                                 <div>Home</div>
                             </div>
                         </Link>
-
                         <Link to='/concert'>
                             <div class="navButton">
                                 <div>Concerts</div>
                             </div>
                         </Link>
-
                         <Link to='/band'>
                             <div class="navButton">
                                 <div>Bands</div>
                             </div>
                         </Link>
-
                         <Link to='/venue'>
                             <div class="navButton">
                                 <div>Venues</div>
