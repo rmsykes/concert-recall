@@ -54,19 +54,16 @@ export default class OneBand extends Component {
                                     <div>Home</div>
                                 </div>
                             </Link>
-
                             <Link to='/concert'>
                                 <div class="navButton">
                                     <div>Concerts</div>
                                 </div>
                             </Link>
-
                             <Link to='/band'>
                                 <div class="navButton">
                                     <div>Bands</div>
                                 </div>
                             </Link>
-
                             <Link to='/venue'>
                                 <div class="navButton">
                                     <div>Venues</div>
@@ -75,46 +72,42 @@ export default class OneBand extends Component {
                         </nav>
                     </div>
 
-
-                    <div className='homeHeader'>
-                        <div className='homeHeaderLeft'>
+                    <div className='header'>
+                        <div className='headerLeft'>
+                            {/* blank black space left of header */}
                         </div>
+                        <div className='headerRight' id='oneBandheaderPhoto'>
+                            <div className='oneBandInfo'>
+                                <h1>{this.state.band.bandName}</h1>
 
-                        <div className='homeHeaderRight'>
+                                <img src={this.state.band.bandPhoto} alt="Band Photo" />
 
-                            <div className='homeHeaderPhoto'>
-                                <img src="https://images.unsplash.com/photo-1569982175971-d92b01cf8694?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=975&q=80" alt="concert photo" />
+                                <h2>{this.state.band.genre}</h2>
                             </div>
                         </div>
                     </div>
 
-                    <div className='oneBandInfo'>
-                        <div className='oneBandTitle'>
-                            <h1>{this.state.band.bandName}</h1>
-                        </div>
+                    <div className='body'>
+                        <div className='oneBandVideosSection'>
+                            <h1 className='bodySectionTitle' id='featuredShowsAndVideosTitle'>Featured Shows and Videos</h1>
+                            <div className='videosListContainer'>
 
-                        <div>
-                            <img src={this.state.band.bandPhoto} alt="Band Photo" />
+                                <div className='videos'>
+                                    <ReactPlayer url={this.state.band.concertVideoOne} />
+                                </div>
 
-                        </div>
+                                <div className='videos'>
+                                    <ReactPlayer url={this.state.band.concertVideoTwo} />
+                                </div>
 
-                        <h2>{this.state.band.genre}</h2>
-                    </div>
+                                <div className='videos'>
+                                    <ReactPlayer url={this.state.band.concertVideoThree} />
+                                </div>
+                            </div>
 
-                    <div className='oneBandVideosList'>
-                        <h2>Featured Shows and Videos</h2>
-                        <div className='videos'>
-                            <ReactPlayer url={this.state.band.concertVideoOne} />
-                        </div>
-
-                        <div className='videos'>
-                            <ReactPlayer url={this.state.band.concertVideoTwo} />
-                        </div>
-
-                        <div className='videos'>
-                            <ReactPlayer url={this.state.band.concertVideoThree} />
                         </div>
                     </div>
+
 
                     {/* COMMENTED OUT DELETE BUTTON SO THAT IT DOESNT BREAK MY DB */}
                     {/* <button onClick={() => this.deleteBand()}>Delete Band</button> */}
