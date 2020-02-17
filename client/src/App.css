@@ -170,6 +170,10 @@ nav a {
   background-image: url(https://images.unsplash.com/photo-1561114601-81d07393ee3d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2689&q=80);
   background-size: cover;
 }
+#oneVenueHeaderPhoto {
+  background-image: url(https://images.unsplash.com/photo-1569982175971-d92b01cf8694?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=975&q=80);
+  background-size: cover;
+}
 .header {
   display: flex;
 }
@@ -179,7 +183,7 @@ nav a {
 }
 .headerRight {
   width: 80%;
-  height: 600px;
+  height: 700px;
 }
 .headerRight h1 {
   font-size: 34px;
@@ -343,23 +347,16 @@ nav a {
 
 
 /* ONE VENUE PAGE CSS */
-.oneVenueInfoTop {
-  margin: 20px auto
+.oneVenueInfo h1 {
+  text-align: center;
+  margin: 45px auto;
 }
-.oneVenueInfoBottom {
-  display:flex;
-  justify-content: space-around;
-  margin: 0 auto;
-  width: 925px;
-  padding-top: 45px;
-}
-.oneVenueInfoBottom img {
+.oneVenueInfo img {
   border-radius: 25px;
+  width: 450px;
+  margin: 30px;
 }
-.oneVenueInfo {
-  margin:-780px 0 0 105px;
-  padding-bottom: 200px;
+#oneVenueBody {
+  height: 200px;;
 }
-.oneVenueTitle {
-  font-size: 1.5em;
-}
+

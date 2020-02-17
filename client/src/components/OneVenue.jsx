@@ -50,19 +50,16 @@ export default class OneVenue extends Component {
                                     <div>Home</div>
                                 </div>
                             </Link>
-
                             <Link to='/concert'>
                                 <div class="navButton">
                                     <div>Concerts</div>
                                 </div>
                             </Link>
-
                             <Link to='/band'>
                                 <div class="navButton">
                                     <div>Bands</div>
                                 </div>
                             </Link>
-
                             <Link to='/venue'>
                                 <div class="navButton">
                                     <div>Venues</div>
@@ -71,37 +68,28 @@ export default class OneVenue extends Component {
                         </nav>
                     </div>
 
-                    <div className='homeHeader'>
-                        <div className='homeHeaderLeft'>
+
+                    <div className='header'>
+                        <div className='headerLeft'>
+                            {/* blank black space left of header */}
                         </div>
-
-                        <div className='homeHeaderRight'>
-
-                            <div className='homeHeaderPhoto'>
-                                <img src="https://images.unsplash.com/photo-1569982175971-d92b01cf8694?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=975&q=80" alt="concert photo" />
-                            </div>
-                        </div>
-                    </div>
-
-                    <div className='oneVenueInfo'>
-                        <div className='oneVenueInfoTop'>
-                            <div className='oneVenueTitle'>
+                        <div className='headerRight' id='oneVenueHeaderPhoto'>
+                            <div className='oneVenueInfo'>
                                 <h1>{this.state.venue.venueName}</h1>
+
+                                <h2>{this.state.venue.location}</h2>
+                                <h2>Capacity: {this.state.venue.capacity}</h2>
+
+                                <img src={this.state.venue.venuePhotoOne} alt="Venue Photo" />
+                                <img src={this.state.venue.venuePhotoTwo} alt="Venue Photo" />
+
                             </div>
-
-                            <h2>{this.state.venue.location}</h2>
-                            <h2>Capacity: {this.state.venue.capacity}</h2>
                         </div>
-
-                        <div className='oneVenueInfoBottom'>
-                            <img src={this.state.venue.venuePhotoOne} alt="Venue Photo" />
-
-                            <img src={this.state.venue.venuePhotoTwo} alt="Venue Photo" />
-                        </div>
-
-
                     </div>
 
+                    <div className='body' id='oneVenueBody'>
+
+                    </div>
 
 
                     {/* COMMENTED OUT DELETE BUTTON SO THAT IT DOESNT BREAK MY DB */}
