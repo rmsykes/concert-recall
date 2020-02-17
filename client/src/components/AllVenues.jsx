@@ -10,11 +10,13 @@ export default class AllVenues extends Component {
     // AllVenues Component State
     state = {
         venueData: [],
-        newVenueName: '',
-        newVenueLocation: '',
-        newVenuecapacity: Number,
-        newVenuePhotoOne: '',
-        newVenuePhotoTwo: '',
+        newVenue: {
+            venueName: String,
+            location: String,
+            capacity: Number,
+            venuePhotoOne: String,
+            venuePhotoTwo: String
+        },
         isHidden: true,
     }
 
@@ -27,47 +29,24 @@ export default class AllVenues extends Component {
     }
 
     // createVenue() - posts venueName, location, capacity from input feilds(which are set to state) to the backend /api/venue
-    createVenue = () => {
-        const newVenue = {
-            venueName: this.state.newVenueName,
-            location: this.state.newVenueLocation,
-            capacity: this.state.newVenueCapacity,
-            venuePhotoOne: this.state.newVenuePhotoOne,
-            venuePhotoTwo: this.state.newVenuePhotoTwo
-        }
+    createVenue = (evt) => {
+        evt.preventDefault()
+        const newVenue = this.state.newVenue
+
         axios.post('/api/venue', newVenue)
             .then((res) => {
                 this.componentDidMount()
             })
     }
 
-    // onVenueNameChange() - sets the state of newVenueName from the input feild for Venue Name on the page
-    onVenueNameChange = (evt) => {
-        const newVenueName = evt.target.value;
-        this.setState({ newVenueName: newVenueName })
+
+    // handleInputChange() - sets state from input feild tageted in input field below
+    handleInputChange = (evt) => {
+        const copiedNewVenue = { ...this.state.newVenue }
+        copiedNewVenue[evt.target.name] = evt.target.value;
+        this.setState({ newVenue: copiedNewVenue })
     }
 
-    // onVenueLocationChange() - sets the state of newVenueLocation from the input feild for Venue Location on the page
-    onVenueLocationChange = (evt) => {
-        const newVenueLocation = evt.target.value;
-        this.setState({ newVenueLocation: newVenueLocation })
-    }
-
-    // onVenueCapacityChange() - sets the state of newVenueCapacity
-    onVenueCapacityChange = (evt) => {
-        const newVenueCapacity = evt.target.value;
-        this.setState({ newVenueCapacity: newVenueCapacity })
-    }
-
-    onVenuePhotoOneChange = (evt) => {
-        const newVenuePhotoOne = evt.target.value;
-        this.setState({ newVenuePhotoOne: newVenuePhotoOne })
-    }
-
-    onVenuePhotoTwoChange = (evt) => {
-        const newVenuePhotoTwo = evt.target.value;
-        this.setState({ newVenuePhotoTwo: newVenuePhotoTwo })
-    }
 
     // toggles seeing create concert form with create form button
     toggleHidden = () => {
@@ -76,10 +55,12 @@ export default class AllVenues extends Component {
         })
     }
 
+    // alerts when a venue is created
     alertVenueMade = () => {
         alert("Venue Created!");
     }
 
+    // venue form toggled on button click
     venueForm = () => {
         return (
             <div className='createForm'>
@@ -91,38 +72,38 @@ export default class AllVenues extends Component {
                         name="venueName"
                         placeholder="Venue Name"
                         required="required"
-                        onChange={this.onVenueNameChange}
-                        value={this.state.onVenueNameChange} />
+                        onChange={this.handleInputChange}
+                        value={this.state.newVenue.venueName} />
 
                     <input
                         type="string"
-                        name="venueLocation"
+                        name="location"
                         placeholder="Venue Location"
                         required="required"
-                        onChange={this.onVenueLocationChange}
-                        value={this.state.onVenueLocationChange} />
+                        onChange={this.handleInputChange}
+                        value={this.state.newVenue.location} />
 
                     <input
                         type="number"
-                        name="venueCapacity"
+                        name="capacity"
                         placeholder="Venue Capacity"
-                        onChange={this.onVenueCapacityChange}
-                        value={this.state.onVenueCapacityChange} />
+                        onChange={this.handleInputChange}
+                        value={this.state.newVenue.capacity} />
                     <br />
                     <br />
                     <input
                         type="string"
-                        name="newVenuePhotoOne"
+                        name="venuePhotoOne"
                         placeholder="Venue Photo"
-                        onChange={this.onVenuePhotoOneChange}
-                        value={this.state.onVenuePhotoOneChange} />
+                        onChange={this.handleInputChange}
+                        value={this.state.newVenue.venuePhotoOne} />
 
                     <input
                         type="string"
-                        name="newVenuePhotoTwo"
+                        name="venuePhotoTwo"
                         placeholder="Venue Photo"
-                        onChange={this.onVenuePhotoTwoChange}
-                        value={this.state.onVenuePhotoTwoChange} />
+                        onChange={this.handleInputChange}
+                        value={this.state.newVenue.venuePhotoTwo} />
                     <br />
                     <br />
                     <input className='submitFormButton' onClick={this.alertVenueMade} type='submit' value="Create Venue"></input>

@@ -71,6 +71,8 @@ select {
   cursor: pointer;
 
 }
+
+
 /* UNIVERSAL NAV BUTTON ANIMATION */
 .navButton {
 	line-height: 53px;
@@ -116,6 +118,7 @@ select {
 	opacity: 1;
   transform: scale(1,1);
 }
+
 
 /* UNIVERSAL BASIC NAV CSS */
 nav {
@@ -185,7 +188,6 @@ nav a {
 }
 
 
-
 /* UNIVERSAL BODY CSS*/
 .body {
   display: flex;
@@ -222,7 +224,6 @@ nav a {
   border-radius: 20px;
   width: 400px;
 }
-
 
 
 /* ALL CONCERTS PAGE CSS */
@@ -268,6 +269,7 @@ nav a {
   color:rgb(104, 131, 52);  /* a little more neon than normal green used*/
 }
 
+
 /* ALL BANDS PAGE CSS */
 .allBandsSectionContainer{
 }
@@ -311,6 +313,7 @@ nav a {
   width: 380px;
 }
 
+
 /* ALL VENUE PAGE CSS */
 .allVenuesSectionContainer{
 }
@@ -337,7 +340,6 @@ nav a {
 .oneVenueFromListOfVenues a {
   text-decoration: none;
 }
-
 
 
 /* ONE VENUE PAGE CSS */

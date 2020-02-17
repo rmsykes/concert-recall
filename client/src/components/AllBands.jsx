@@ -141,7 +141,6 @@ export default class AllBands extends Component {
                 </div>
             })
 
-
         return (
             <div>
                 <div className='navBar'>
