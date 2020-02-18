@@ -2,7 +2,7 @@
 .App {
   text-align: center;
   background-color: rgb(32, 25, 32);
-  font-family: 'McLaren', cursive;
+  font-family: 'McLaren', Georgia, Times, 'Times New Roman', serif;
   color: whitesmoke;
 }
 a {
