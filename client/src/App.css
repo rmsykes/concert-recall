@@ -347,6 +347,7 @@ nav a {
 
 
 /* ONE VENUE PAGE CSS */
+
 .oneVenueInfo h1 {
   text-align: center;
   margin: 45px auto;
@@ -360,3 +361,80 @@ nav a {
   height: 200px;;
 }
 
+/* RESPONSIVE DESIGNS */
+
+/* ONEVENUE PAGE RESPONSIVE DESIGN */
+@media only screen and (max-width: 1275px) {
+  .oneVenueInfo img {
+    width: 415px;
+  }
+}
+@media only screen and (max-width: 1190px) {
+  .oneVenueInfo img {
+    width: 390px;
+  }
+}
+@media only screen and (max-width: 1130px) {
+  .oneVenueInfo img {
+    width: 375px;
+  }
+}
+@media only screen and (max-width: 1090px) {
+  .oneVenueInfo img {
+    width: 370px;
+    margin: 20px;
+  }
+}
+@media only screen and (max-width: 1030px) {
+  .oneVenueInfo img {
+    width: 350px;
+  }
+  #oneVenueBody {
+    height: 500px;
+  }
+}
+@media only screen and (max-width: 980px) {
+  .oneVenueInfo img {
+    width: 325px;
+  }
+}
+@media only screen and (max-width: 920px) {
+  .oneVenueInfo img {
+    width: 315px;
+  }
+}
+@media only screen and (max-width: 920px) {
+  .oneVenueInfo img {
+    width: 300px;
+  }
+}
+@media only screen and (max-width: 860px) {
+  .oneVenueInfo img {
+    width: 290px;
+  }
+}
+@media only screen and (max-width: 830px) {
+  .oneVenueInfo img {
+    margin: 10px;
+  }
+}
+@media only screen and (max-width: 780px) {
+  .oneVenueInfo img {
+    width: 275px;
+  }
+  #oneVenueBody {
+    height: 300px;
+  }
+}
+@media only screen and (max-width: 750px) {
+  .oneVenueInfo img {
+    width: 260px;
+  }
+}
+
+/* IPAD */
+/* @media only screen and (max-width: 1024px) {
+  .App {
+    width: 1024px;
+  }
+} */
