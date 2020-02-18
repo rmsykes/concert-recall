@@ -228,7 +228,9 @@ nav a {
   border-radius: 20px;
   width: 400px;
 }
-
+#homeBodySectionTitle {
+  width: 220px;
+}
 
 /* ALL CONCERTS PAGE CSS */
 .myShowsArea {

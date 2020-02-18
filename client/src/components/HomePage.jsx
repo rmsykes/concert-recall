@@ -68,6 +68,8 @@ export default class HomePage extends Component {
 
 
                 <div className='body'>
+                <h1 className='bodySectionTitle' id='homeBodySectionTitle'>Home</h1>
+
                     <div className='homeLink'>
                         <Link to={'/concert'} >
                             <p >
