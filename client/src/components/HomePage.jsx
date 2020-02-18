@@ -73,7 +73,7 @@ export default class HomePage extends Component {
                     <div className='homeLink'>
                         <Link to={'/concert'} >
                             <p >
-                                <h3>My Concerts</h3>
+                                <h3>Concerts</h3>
                                 <img src="https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?ixlib=rb-1.2.1&auto=format&fit=crop&w=2250&q=80" alt="concert photo" />
                             </p>
                         </Link>
@@ -83,7 +83,7 @@ export default class HomePage extends Component {
                         <Link to={'/band'}>
                             <p >
                                 <h3>Bands</h3>
-                                <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fo.aolcdn.com%2Fimages%2Fdims%3Fquality%3D100%26image_uri%3Dhttp%253A%252F%252Fwww.blogcdn.com%252Fwww.joystiq.com%252Fmedia%252F2011%252F08%252Frhcp530pxdph.jpg%26client%3Dcbc79c14efcebee57402%26signature%3Dd5d93a072070c14f57f453016e0340837cd7cc53&f=1&nofb=1" alt="band photo" />
+                                <img src="https://images.unsplash.com/photo-1499364615650-ec38552f4f34?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1932&q=80" alt="band photo" />
                             </p>
                         </Link>
                     </div>
@@ -92,7 +92,7 @@ export default class HomePage extends Component {
                         <Link to={'/venue'}>
                             <p>
                                 <h3>Venues</h3>
-                                <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.charlottefive.com%2Fwp-content%2Fuploads%2F2015%2F01%2Fmusic-venues-visulite-charlotte2.jpg&f=1&nofb=1" alt="venue photo" />
+                                <img src="https://images.unsplash.com/photo-1561114601-81d07393ee3d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2689&q=80" alt="venue photo" />
                             </p>
                         </Link>
                     </div>

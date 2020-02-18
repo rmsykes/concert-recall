@@ -216,7 +216,7 @@ export default class AllConcerts extends Component {
                         {/* blank black space left of header */}
                     </div>
                     <div className='headerRight' id='allConcertsHeaderPhoto'>
-                        <h1>My Past Live Shows</h1>
+                        <h1>My Concerts</h1>
                     </div>
                 </div>
 
