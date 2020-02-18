@@ -2,7 +2,7 @@
 .App {
   text-align: center;
   background-color: rgb(32, 25, 32);
-  font-family: 'McLaren', Georgia, Times, 'Times New Roman', serif;
+  font-family: 'Tomorrow', sans-serif;  
   color: whitesmoke;
 }
 a {
@@ -127,7 +127,6 @@ nav {
   display:flex;
   align-items: center;
   justify-content: space-around;
-  font-family: arial;
 }
 nav a {
   text-decoration: none;
@@ -189,6 +188,7 @@ nav a {
   font-size: 34px;
   margin: 105px 0 0 -55px;
   text-align: left;
+  line-height: 1.8;
 }
 
 
