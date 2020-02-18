@@ -175,7 +175,7 @@ export default class AllVenues extends Component {
 
                 <div className='body'>
                     <div className='allVenuesSectionContainer'>
-                        <h1 className='bodySectionTitle'>Venues</h1>
+                        <h1 className='bodySectionTitle' id='allVenuesSectionTitle'>Venues</h1>
 
                         <div className='listOfVenuesContainer'>
                             {listOfVenues}

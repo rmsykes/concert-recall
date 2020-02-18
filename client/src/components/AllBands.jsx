@@ -182,7 +182,7 @@ export default class AllBands extends Component {
 
                 <div className='body'>
                     <div className='allBandsSectionContainer'>
-                        <h1 className='bodySectionTitle'>Bands</h1>
+                        <h1 className='bodySectionTitle' id='allBandsSectionTitle'>Bands</h1>
 
                         <div className='listOfBandsContainer'>
                             {listOfBands}

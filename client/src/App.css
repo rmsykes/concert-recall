@@ -277,6 +277,9 @@ nav a {
 /* ALL BANDS PAGE CSS */
 .allBandsSectionContainer{
 }
+#allBandsSectionTitle {
+  width: 220px;
+}
 .listOfBandsContainer {
   margin: 25px auto;
 }
@@ -320,6 +323,9 @@ nav a {
 
 /* ALL VENUE PAGE CSS */
 .allVenuesSectionContainer{
+}
+#allVenuesSectionTitle{
+  width: 220px;
 }
 .listOfVenuesContainer {
   margin: 25px auto;
@@ -432,9 +438,29 @@ nav a {
   }
 }
 
-/* IPAD */
-/* @media only screen and (max-width: 1024px) {
+/* Iphone 6/7/8 Plus */
+@media only screen and (max-width: 414px) {
   .App {
-    width: 1024px;
+    width: max-content;
   }
-} */
+  .headerRight{
+    height: 625px;
+  }
+  .headerRight h1 {
+    font-size: 28px;
+  }
+  .oneVenueFromListOfVenues{
+    width: 500px;
+  }
+  .oneVenueInfo img {
+    width: 225px;
+    margin: 5px;
+  }
+}
+
+/* Iphone X */
+@media only screen and (max-width: 375px) {
+  #oneVenueBody {
+    height: 465px;
+  }
+}
